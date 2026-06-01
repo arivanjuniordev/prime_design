@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../theme/app_colors.dart';
-import '../theme/app_text.dart';
-import '../theme/design_tokens.dart';
+import '../theme/prime_colors.dart';
+import '../theme/prime_text.dart';
+import '../theme/prime_tokens.dart';
 
 /// Dica/informação: fundo tonalizado em [color], borda fina colorida, ícone +
 /// texto. Mais leve que [PrimeBanner] (sem ícone-box, sem título destacado).

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../theme/app_colors.dart';
-import '../theme/design_tokens.dart';
+import '../theme/prime_colors.dart';
+import '../theme/prime_tokens.dart';
 
 /// Container base flat (estilo guitarra_pro_z). Fundo [color] (default =
 /// surface do tema), borda 1px sutil e sombra única opcional via [elevation].

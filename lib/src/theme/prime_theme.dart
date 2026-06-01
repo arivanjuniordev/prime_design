@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'app_colors.dart';
-import 'design_tokens.dart';
+import 'prime_colors.dart';
+import 'prime_tokens.dart';
 
 /// Construtor de tema do design system Prime (flat 2026, Inter).
 ///

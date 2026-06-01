@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../theme/design_tokens.dart';
-import '../ui/haptics.dart';
+import '../theme/prime_tokens.dart';
+import '../ui/prime_haptics.dart';
 
 /// Wrapper de interação premium: scale-down ao pressionar, cancel quando o
 /// dedo sai do bounding box (drag-out cancel), haptic leve no tap, e fica

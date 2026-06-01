@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../theme/design_tokens.dart';
+import '../theme/prime_tokens.dart';
 
 /// Quadrado arredondado com ícone sobre fundo tonalizado em [color].
 ///

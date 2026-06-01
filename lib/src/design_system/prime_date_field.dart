@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-import '../theme/design_tokens.dart';
+import '../theme/prime_tokens.dart';
 
 /// Campo de data: abre showDatePicker ao tocar. Mostra dd/MM/yyyy.
 class PrimeDateField extends StatelessWidget {

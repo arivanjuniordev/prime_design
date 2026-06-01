@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../services/export_service.dart';
+import '../services/prime_export_service.dart';
 
 /// Botão de exportação (PDF / Excel / CSV) para listagens.
 /// Recebe os cabeçalhos e uma função que extrai a linha de cada item.

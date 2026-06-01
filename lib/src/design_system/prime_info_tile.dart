@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-import '../theme/app_colors.dart';
-import '../theme/app_text.dart';
-import '../theme/design_tokens.dart';
-import 'app_icon_box.dart';
-import 'app_pressable.dart';
-import 'surface.dart';
+import '../theme/prime_colors.dart';
+import '../theme/prime_text.dart';
+import '../theme/prime_tokens.dart';
+import 'prime_icon_box.dart';
+import 'prime_pressable.dart';
+import 'prime_surface.dart';
 
 /// Tile horizontal genérico: ícone-box + título + subtítulo + trailing.
 /// Quando [elevated] e há [onTap], renderiza como [PrimeSurface] elevada e

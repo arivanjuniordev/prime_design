@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../theme/app_colors.dart';
-import '../theme/design_tokens.dart';
+import '../theme/prime_colors.dart';
+import '../theme/prime_tokens.dart';
 
 /// Círculo flat: fundo neutro com borda, ou fundo de marca sólido quando
 /// [active]. Sem gradientes, sem glow.

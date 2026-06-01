@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-import '../theme/app_colors.dart';
-import '../theme/app_text.dart';
-import '../theme/design_tokens.dart';
-import 'app_button.dart';
-import 'app_card.dart';
-import 'app_error_banner.dart';
+import '../theme/prime_colors.dart';
+import '../theme/prime_text.dart';
+import '../theme/prime_tokens.dart';
+import 'prime_button.dart';
+import 'prime_card.dart';
+import 'prime_error_banner.dart';
 
 /// Scaffold padrão dos formulários de cadastro: header com voltar, card com
 /// os campos, banner de erro e botões cancelar/salvar. Centraliza o layout.

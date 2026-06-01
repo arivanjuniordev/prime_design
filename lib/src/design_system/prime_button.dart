@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../theme/app_colors.dart';
-import '../theme/design_tokens.dart';
-import '../ui/haptics.dart';
+import '../theme/prime_colors.dart';
+import '../theme/prime_tokens.dart';
+import '../ui/prime_haptics.dart';
 
 enum PrimeButtonVariant { primary, secondary, danger }
 

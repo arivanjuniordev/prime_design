@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../theme/app_colors.dart';
-import '../theme/design_tokens.dart';
-import 'app_pressable.dart';
+import '../theme/prime_colors.dart';
+import '../theme/prime_tokens.dart';
+import 'prime_pressable.dart';
 
 /// Card flat com borda fina + sombra opcional. Passe [onTap] pra versão
 /// interativa — usa [PrimePressable] (scale-down + haptic + drag-out cancel).

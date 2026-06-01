@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../theme/app_text.dart';
-import '../theme/design_tokens.dart';
+import '../theme/prime_text.dart';
+import '../theme/prime_tokens.dart';
 
 /// Badge compacto UPPERCASE. `filled=false` usa fundo tingido (alpha 0.14).
 class PrimeBadge extends StatelessWidget {

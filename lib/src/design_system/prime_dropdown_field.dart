@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../theme/design_tokens.dart';
+import '../theme/prime_tokens.dart';
 
 /// Dropdown com label acima, estilo consistente com PrimeTextField.
 class PrimeDropdownField<T> extends StatelessWidget {

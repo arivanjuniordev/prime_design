@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../theme/app_colors.dart';
-import '../theme/app_text.dart';
-import '../theme/design_tokens.dart';
+import '../theme/prime_colors.dart';
+import '../theme/prime_text.dart';
+import '../theme/prime_tokens.dart';
 
 /// Chip selecionável flat. Selecionado = fundo [activeColor] sólido; inativo =
 /// fundo surface + borda. Sem sombras coloridas.

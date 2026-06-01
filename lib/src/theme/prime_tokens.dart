@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'app_colors.dart';
+import 'prime_colors.dart';
 
 /// Escala de raios.
 class PrimeRadius {

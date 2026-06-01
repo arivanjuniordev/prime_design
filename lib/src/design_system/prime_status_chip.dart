@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../theme/app_colors.dart';
-import 'app_badge.dart';
+import '../theme/prime_colors.dart';
+import 'prime_badge.dart';
 
 /// Mapeia status textuais comuns da frota pra cores semânticas e renderiza
 /// um PrimeBadge. Centraliza a paleta de status pra toda a app.

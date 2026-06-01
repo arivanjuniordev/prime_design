@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../theme/app_colors.dart';
-import '../theme/app_text.dart';
-import '../theme/design_tokens.dart';
-import 'app_icon_box.dart';
+import '../theme/prime_colors.dart';
+import '../theme/prime_text.dart';
+import '../theme/prime_tokens.dart';
+import 'prime_icon_box.dart';
 
 /// Banner horizontal: ícone-box + título + mensagem opcional + trailing.
 /// Fundo tonalizado pela [color], borda fina colorida. Flat, sem sombra.

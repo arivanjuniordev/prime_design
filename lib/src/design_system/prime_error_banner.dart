@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
-import '../theme/app_colors.dart';
-import '../theme/design_tokens.dart';
+import '../theme/prime_colors.dart';
+import '../theme/prime_tokens.dart';
 
 class PrimeErrorBanner extends StatelessWidget {
   const PrimeErrorBanner({super.key, required this.message});

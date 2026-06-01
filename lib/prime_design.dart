@@ -13,41 +13,41 @@
 library;
 
 // ===== Tema =====
-export 'src/theme/app_colors.dart';
-export 'src/theme/app_text.dart';
-export 'src/theme/app_theme.dart';
-export 'src/theme/design_tokens.dart';
+export 'src/theme/prime_colors.dart';
+export 'src/theme/prime_text.dart';
+export 'src/theme/prime_theme.dart';
+export 'src/theme/prime_tokens.dart';
 
 // ===== Utilitários =====
-export 'src/money.dart';
-export 'src/masks.dart';
-export 'src/ui/haptics.dart';
-export 'src/services/export_service.dart';
+export 'src/prime_money.dart';
+export 'src/prime_masks.dart';
+export 'src/ui/prime_haptics.dart';
+export 'src/services/prime_export_service.dart';
 
 // ===== Componentes =====
-export 'src/design_system/app_badge.dart';
-export 'src/design_system/app_banner.dart';
-export 'src/design_system/app_button.dart';
-export 'src/design_system/app_card.dart';
-export 'src/design_system/app_chip.dart';
-export 'src/design_system/app_circle.dart';
-export 'src/design_system/app_date_field.dart';
-export 'src/design_system/app_dropdown_field.dart';
-export 'src/design_system/app_empty_state.dart';
-export 'src/design_system/app_error_banner.dart';
-export 'src/design_system/app_icon_box.dart';
-export 'src/design_system/app_info_box.dart';
-export 'src/design_system/app_info_tile.dart';
-export 'src/design_system/app_page_header.dart';
-export 'src/design_system/app_pill.dart';
-export 'src/design_system/app_pressable.dart';
-export 'src/design_system/app_search_field.dart';
-export 'src/design_system/app_section_header.dart';
-export 'src/design_system/app_skeleton.dart';
-export 'src/design_system/app_stat_tile.dart';
-export 'src/design_system/app_text_field.dart';
-export 'src/design_system/entity_form_scaffold.dart';
-export 'src/design_system/entity_picker.dart';
-export 'src/design_system/export_button.dart';
-export 'src/design_system/status_chip.dart';
-export 'src/design_system/surface.dart';
+export 'src/design_system/prime_badge.dart';
+export 'src/design_system/prime_banner.dart';
+export 'src/design_system/prime_button.dart';
+export 'src/design_system/prime_card.dart';
+export 'src/design_system/prime_chip.dart';
+export 'src/design_system/prime_circle.dart';
+export 'src/design_system/prime_date_field.dart';
+export 'src/design_system/prime_dropdown_field.dart';
+export 'src/design_system/prime_empty_state.dart';
+export 'src/design_system/prime_error_banner.dart';
+export 'src/design_system/prime_icon_box.dart';
+export 'src/design_system/prime_info_box.dart';
+export 'src/design_system/prime_info_tile.dart';
+export 'src/design_system/prime_page_header.dart';
+export 'src/design_system/prime_pill.dart';
+export 'src/design_system/prime_pressable.dart';
+export 'src/design_system/prime_search_field.dart';
+export 'src/design_system/prime_section_header.dart';
+export 'src/design_system/prime_skeleton.dart';
+export 'src/design_system/prime_stat_tile.dart';
+export 'src/design_system/prime_text_field.dart';
+export 'src/design_system/prime_entity_form_scaffold.dart';
+export 'src/design_system/prime_entity_picker.dart';
+export 'src/design_system/prime_export_button.dart';
+export 'src/design_system/prime_status_chip.dart';
+export 'src/design_system/prime_surface.dart';

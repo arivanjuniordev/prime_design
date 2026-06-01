@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
-import '../theme/app_colors.dart';
-import '../theme/design_tokens.dart';
+import '../theme/prime_colors.dart';
+import '../theme/prime_tokens.dart';
 
 /// Bloco shimmer simples (linha, círculo, retângulo). Usa cores do tema
 /// (claro/escuro automático) — nunca cores hardcoded.

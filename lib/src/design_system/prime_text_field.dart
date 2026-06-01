@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../theme/app_colors.dart';
-import '../theme/design_tokens.dart';
+import '../theme/prime_colors.dart';
+import '../theme/prime_tokens.dart';
 
 /// Campo de texto com label acima. Estilo herda do inputDecorationTheme.
 class PrimeTextField extends StatelessWidget {

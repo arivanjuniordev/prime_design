@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../theme/app_colors.dart';
-import '../theme/app_text.dart';
-import '../theme/design_tokens.dart';
-import 'app_card.dart';
+import '../theme/prime_colors.dart';
+import '../theme/prime_text.dart';
+import '../theme/prime_tokens.dart';
+import 'prime_card.dart';
 
 /// Tile de KPI: ícone colorido em box + valor em destaque + label.
 class PrimeStatTile extends StatelessWidget {
