@@ -46,6 +46,29 @@ No DevTools → **Performance**:
 3. **Highlight repaints** — o que repinta à toa (candidato a `RepaintBoundary`).
 4. **Highlight oversized images** — imagens maiores que o tamanho exibido.
 
+## Resultados medidos
+
+Scroll de 200 `PrimeCard`s (cada um com `PrimeInfoTile`), Pixel 8 Pro emulado,
+**profile mode**, via `example/integration_test/perf_scroll_test.dart`:
+
+| Métrica | Build (UI) | Raster (GPU) |
+|---|---|---|
+| Média | 1,50 ms | 2,60 ms |
+| P90 | 2,55 ms | 3,67 ms |
+| P99 | 3,53 ms | 4,35 ms |
+| Pior frame | 5,83 ms | 9,69 ms |
+| Frames fora do orçamento (16,67 ms) | 0 | 0 |
+
+76 frames, **zero jank**. Reproduza com (note o `--no-dds`, exigido em
+device/emulador):
+
+```bash
+cd example
+flutter drive --driver=test_driver/perf_driver.dart \
+  --target=integration_test/perf_scroll_test.dart --profile --no-dds -d <emulador>
+# saída: build/scrolling_timeline.timeline_summary.json
+```
+
 ## Como caçar jank
 
 Ciclo: **medir → achar o frame ruim → atacar a causa → medir de novo.** Nunca adivinhe.

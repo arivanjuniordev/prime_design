@@ -5,16 +5,15 @@ import 'package:prime_design/prime_design.dart';
 
 /// Harness de medição de performance de scroll do Prime Design.
 ///
-/// Monta um [ListView.builder] com 200 [PrimeCard]s (cada um contendo um
-/// [PrimeInfoTile]) e mede o timeline de frames durante um fling + settle.
+/// Monta um [ListView.builder] com 200 [PrimeCard]s (cada um com um
+/// [PrimeInfoTile]) e grava o timeline de frames durante flings agressivos.
 ///
-/// Rode com:
 /// ```
-/// flutter drive \
-///   --driver=test_driver/perf_driver.dart \
+/// flutter drive --driver=test_driver/perf_driver.dart \
 ///   --target=integration_test/perf_scroll_test.dart \
-///   --profile -d <emulador>
+///   --profile --no-dds -d <emulador>
 /// ```
+/// `--no-dds` é necessário em device/emulador (a doc oficial de profiling).
 void main() {
   final binding = IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
@@ -31,30 +30,25 @@ void main() {
               key: const Key('perf_list'),
               padding: const EdgeInsets.all(PrimeSpacing.lg),
               itemCount: 200,
-              itemBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.only(bottom: PrimeSpacing.lg),
-                  child: PrimeCard(
-                    child: PrimeInfoTile(
-                      icon: Icons.directions_car_rounded,
-                      iconColor: PrimePalette.info,
-                      title: 'Item $index',
-                      subtitle: 'Linha de medição de performance #$index',
-                    ),
+              itemBuilder: (context, index) => Padding(
+                padding: const EdgeInsets.only(bottom: PrimeSpacing.lg),
+                child: PrimeCard(
+                  child: PrimeInfoTile(
+                    icon: Icons.directions_car_rounded,
+                    iconColor: PrimePalette.info,
+                    title: 'Item $index',
+                    subtitle: 'Linha de medição #$index',
                   ),
-                );
-              },
+                ),
+              ),
             ),
           ),
         ),
       ),
     );
-
     await tester.pumpAndSettle();
 
     final listFinder = find.byKey(const Key('perf_list'));
-
-    // Mede o timeline durante uma sequência de flings (scroll agressivo).
     await binding.traceAction(
       () async {
         for (var i = 0; i < 5; i++) {

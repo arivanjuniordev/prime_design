@@ -22,18 +22,21 @@ flutter devices
 flutter drive \
   --driver=test_driver/perf_driver.dart \
   --target=integration_test/perf_scroll_test.dart \
-  --profile -d <emulador>
+  --profile --no-dds -d <emulador>
 ```
 
 > Rode a partir da pasta `example/`. Antes do primeiro uso: `flutter pub get`.
+> `--no-dds` é **obrigatório** em device/emulador (senão o `traceAction` falha
+> com "Failed to connect to VM Service"). Doc oficial:
+> <https://docs.flutter.dev/cookbook/testing/integration/profiling>.
 
 ## Saída
 
 O driver gera, na pasta `build/` do `example/`:
 
-- `build/scrolling.timeline.json` — timeline bruto (eventos de trace).
-- `build/scrolling.timeline_summary.json` — **métricas agregadas** (o arquivo
-  que interessa).
+- `build/scrolling_timeline.timeline.json` — timeline bruto (eventos de trace).
+- `build/scrolling_timeline.timeline_summary.json` — **métricas agregadas** (o
+  arquivo que interessa).
 
 ## Como ler o summary
 
