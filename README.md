@@ -54,6 +54,17 @@ Text('...', style: TextStyle(color: context.cs.textPrimary));
 - Cor de marca via tema; neutros/espaçamentos via tokens — nunca hardcoded.
 - Design flat: 1 sombra suave + borda 1px, cantos arredondados (raio 14).
 
+## Documentação
+
+- [doc/PERFORMANCE.md](doc/PERFORMANCE.md) — anti-padrões evitados, como **medir** (profile mode + DevTools), caçar jank e metas de métricas.
+- [doc/RESPONSIVE.md](doc/RESPONSIVE.md) — breakpoints (`PrimeBreakpoint`), `SafeArea`, layout fluido e padrão adaptativo.
+
+## Testes
+
+```bash
+flutter test   # 32 testes: tema/marca, money, máscaras, status, widgets
+```
+
 ## Exemplo
 
 `example/` traz uma galeria que troca a marca em tempo real e alterna claro/escuro:

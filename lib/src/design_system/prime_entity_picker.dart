@@ -203,27 +203,31 @@ class _EntityPickerSheetState extends State<_EntityPickerSheet> {
                           style: TextStyle(color: cs.textMuted),
                         ),
                       )
-                    : ListView(
+                    : ListView.builder(
                         shrinkWrap: true,
                         padding: const EdgeInsets.only(bottom: PrimeSpacing.sm),
-                        children: [
-                          if (showEmptyOption)
-                            _OptionTile(
+                        itemCount:
+                            filtered.length + (showEmptyOption ? 1 : 0),
+                        itemBuilder: (context, index) {
+                          if (showEmptyOption && index == 0) {
+                            return _OptionTile(
                               label: widget.emptyLabel!,
                               selected: widget.value == null,
                               onTap: () => Navigator.of(
                                 context,
                               ).pop(const _PickerResult(null)),
-                            ),
-                          for (final o in filtered)
-                            _OptionTile(
-                              label: o.label,
-                              selected: o.id == widget.value,
-                              onTap: () => Navigator.of(
-                                context,
-                              ).pop(_PickerResult(o.id)),
-                            ),
-                        ],
+                            );
+                          }
+                          final o =
+                              filtered[index - (showEmptyOption ? 1 : 0)];
+                          return _OptionTile(
+                            label: o.label,
+                            selected: o.id == widget.value,
+                            onTap: () => Navigator.of(
+                              context,
+                            ).pop(_PickerResult(o.id)),
+                          );
+                        },
                       ),
               ),
             ],
