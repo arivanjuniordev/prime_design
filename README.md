@@ -45,7 +45,10 @@ Text('...', style: TextStyle(color: context.cs.textPrimary));
 - **Componentes:** `PrimeButton`, `PrimeCard`, `PrimeBadge`, `PrimeChip`, `PrimeTextField`,
   `PrimeDropdownField`, `PrimeDateField`, `PrimeSearchField`, `PrimeEmptyState`, `PrimeErrorBanner`,
   `PrimeStatTile`, `PrimeStatusChip`, `PrimeEntityPicker`, `PrimeEntityFormScaffold`, `PrimeExportButton`,
-  `PrimeReveal` (animação de entrada fade+slide, com `.stagger`; respeita reduce motion), … (27 no total).
+  `PrimeReveal` (animação de entrada fade+slide, com `.stagger`; respeita reduce motion), … (30 no total).
+- **Primitivos de layout/render:** `PrimeLazyIndexedStack` (abas/páginas lazy — perf),
+  `PrimeMeasurable` (mede o tamanho do filho), `PrimeIgnorePointerKeepSemantics` /
+  `PrimeIgnorePointerAndSemantics` (acessibilidade). Inspirados no Wonderous (gskinner).
 - **Utilitários:** `PrimeMoney.format/parse` (centavos), `PrimeLitros.format/parse` (ml),
   `PrimeMoneyInputFormatter`, máscaras (`PrimeCpfMask`, `PrimePlacaMask`…), `PrimeHaptics`,
   `PrimeExportService`/`PrimeExportButton` (CSV/Excel/PDF).
@@ -64,7 +67,7 @@ Text('...', style: TextStyle(color: context.cs.textPrimary));
 ## Testes
 
 ```bash
-flutter test   # 69 testes: lógica/interação + property-based (glados) na camada
+flutter test   # 72 testes: lógica/interação + property-based (glados) na camada
                # de lógica + leak tracking (leak_tracker) em todos os widget tests
 ```
 
