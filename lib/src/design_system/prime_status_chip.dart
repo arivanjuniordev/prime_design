@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../theme/prime_colors.dart';
 import 'prime_badge.dart';
 
-/// Mapeia status textuais comuns da frota pra cores semânticas e renderiza
-/// um PrimeBadge. Centraliza a paleta de status pra toda a app.
+/// Mapeia status textuais comuns (ativo, pendente, vencido...) para cores
+/// semânticas e renderiza um PrimeBadge. Centraliza a paleta de status do app.
 class PrimeStatusChip extends StatelessWidget {
   /// Cria um chip para o [status] textual informado.
   const PrimeStatusChip(this.status, {super.key});

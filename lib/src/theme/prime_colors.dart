@@ -77,7 +77,7 @@ class PrimePalette {
   /// Cor do scrim (overlay escurecedor de modais/sheets).
   static const Color scrim = Color(0xFF000000);
 
-  /// Marca padrão do package (esmeralda Ecosafety). Apps passam a sua via
+  /// Marca padrão do package (verde esmeralda). Apps passam a sua via
   /// `PrimeTheme.light(brand: ...)`.
   static const Color defaultBrand = Color(0xFF0E7C5A);
 }

@@ -1,7 +1,7 @@
 # CLAUDE.md — prime_design (package Flutter)
 
 Design system **flat 2026** (fonte Inter) com **cor de marca parametrizável**, publicável.
-Extraído e generalizado do Eco Frota / Sharon. Repo: `arivanjuniordev/prime_design`.
+Genérico e reutilizável em qualquer app. Repo: `arivanjuniordev/prime_design`.
 
 ## O que é
 

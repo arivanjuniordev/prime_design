@@ -129,11 +129,122 @@ class _ExampleAppState extends State<ExampleApp> {
               ),
               const SizedBox(height: PrimeSpacing.xl),
               PrimeSectionHeader(
-                title: 'Campo de texto',
-                icon: Icons.text_fields_outlined,
+                title: 'KPIs (StatTile)',
+                icon: Icons.insights_outlined,
+                color: context.cs.accent,
+              ),
+              Row(
+                children: const [
+                  Expanded(
+                    child: PrimeStatTile(
+                      icon: Icons.local_gas_station,
+                      color: PrimePalette.success,
+                      label: 'Consumo',
+                      value: '12,5 km/L',
+                    ),
+                  ),
+                  SizedBox(width: PrimeSpacing.sm),
+                  Expanded(
+                    child: PrimeStatTile(
+                      icon: Icons.speed,
+                      color: PrimePalette.info,
+                      label: 'Rodados',
+                      value: '1.240 km',
+                      sub: 'últimos 30 dias',
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: PrimeSpacing.xl),
+              PrimeSectionHeader(
+                title: 'Info & elementos',
+                icon: Icons.dashboard_customize_outlined,
+                color: context.cs.accent,
+              ),
+              const PrimeInfoTile(
+                icon: Icons.badge,
+                iconColor: PrimePalette.info,
+                title: 'Motorista',
+                subtitle: 'João da Silva',
+              ),
+              const SizedBox(height: PrimeSpacing.md),
+              Wrap(
+                spacing: PrimeSpacing.sm,
+                runSpacing: PrimeSpacing.sm,
+                crossAxisAlignment: WrapCrossAlignment.center,
+                children: const [
+                  PrimePill(icon: Icons.star, text: 'Pro'),
+                  PrimePill(
+                    icon: Icons.bolt,
+                    text: 'Elétrico',
+                    color: PrimePalette.success,
+                  ),
+                  PrimeIconBox(
+                    icon: Icons.directions_car,
+                    color: PrimePalette.info,
+                  ),
+                  PrimeIconBox(
+                    icon: Icons.build,
+                    color: PrimePalette.warning,
+                  ),
+                ],
+              ),
+              const SizedBox(height: PrimeSpacing.xl),
+              PrimeSectionHeader(
+                title: 'Banners & avisos',
+                icon: Icons.campaign_outlined,
+                color: context.cs.accent,
+              ),
+              const PrimeBanner(
+                icon: Icons.warning_amber,
+                title: 'Documento vencido',
+                color: PrimePalette.warning,
+                message: 'O licenciamento do veículo ABC-1234 venceu.',
+              ),
+              const SizedBox(height: PrimeSpacing.md),
+              const PrimeErrorBanner(message: 'Falha de rede'),
+              const SizedBox(height: PrimeSpacing.xl),
+              PrimeSectionHeader(
+                title: 'Formulário',
+                icon: Icons.edit_note_outlined,
                 color: context.cs.accent,
               ),
               const PrimeTextField(label: 'Nome'),
+              const SizedBox(height: PrimeSpacing.md),
+              PrimeDateField(
+                label: 'Vencimento',
+                value: null,
+                onChanged: (_) {},
+              ),
+              const SizedBox(height: PrimeSpacing.md),
+              PrimeEntityPickerField(
+                label: 'Veículo',
+                value: null,
+                options: const [PrimePickerOption('1', 'ABC-1234')],
+                onChanged: (_) {},
+              ),
+              const SizedBox(height: PrimeSpacing.xl),
+              PrimeSectionHeader(
+                title: 'Carregando (skeleton)',
+                icon: Icons.hourglass_empty_outlined,
+                color: context.cs.accent,
+              ),
+              Row(
+                children: const [
+                  Expanded(child: PrimeSkeletonStatTile()),
+                  SizedBox(width: PrimeSpacing.sm),
+                  Expanded(child: PrimeSkeletonStatTile()),
+                ],
+              ),
+              const SizedBox(height: PrimeSpacing.xl),
+              PrimeSectionHeader(
+                title: 'Estado vazio',
+                icon: Icons.inbox_outlined,
+                color: context.cs.accent,
+              ),
+              const PrimeCard(
+                child: PrimeEmptyState(title: 'Nada por aqui'),
+              ),
             ],
           ),
         ),

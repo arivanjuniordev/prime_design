@@ -82,6 +82,5 @@ SchedulerBinding.instance.addTimingsCallback((timings) {
 
 ## Referência completa
 
-Guia conceitual detalhado (metodologia, pipeline, isolates, app-size, checklist):
-ver `nao_mexer/flutter_perf.md` no monorepo Eco Frota, e a doc oficial em
+Guia oficial (metodologia, pipeline, isolates, app-size, checklist):
 <https://docs.flutter.dev/perf>.

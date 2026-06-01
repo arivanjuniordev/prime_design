@@ -1,0 +1,2 @@
+include: package:flutter_lints/flutter.yaml
+# O example é um app de demonstração, não API publicável: não exige dartdoc.

@@ -2,8 +2,12 @@ name: prime_design
 description: >-
   Prime Design — design system flat 2026 (Inter, cor de marca parametrizável)
   com tema, tokens e componentes reutilizáveis em Flutter.
+repository: https://github.com/arivanjuniordev/prime_design
+issue_tracker: https://github.com/arivanjuniordev/prime_design/issues
+topics: [design-system, ui, theme, widgets, material]
 version: 0.1.0
-publish_to: 'none' # remover para publicar no pub.dev
+# remova publish_to e rode `dart pub publish` quando for publicar
+publish_to: 'none'
 
 environment:
   sdk: ^3.10.0

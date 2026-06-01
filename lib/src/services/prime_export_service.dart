@@ -173,7 +173,7 @@ Future<Uint8List> _pdfIsolate(_ExportArgs args) async {
                 ),
               ),
               pw.Text(
-                'Eco Frota — Ecosafety • gerado em $geradoEm',
+                'Gerado em $geradoEm',
                 style: const pw.TextStyle(
                   fontSize: 9,
                   color: PdfColors.grey700,

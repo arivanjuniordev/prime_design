@@ -1,7 +1,7 @@
 # Prime Design
 
 Design system Flutter **flat 2026** (fonte Inter), com **cor de marca parametrizável**.
-Tema, tokens e ~26 componentes reutilizáveis — extraídos e generalizados do Eco Frota / Sharon.
+Tema, tokens e ~26 componentes reutilizáveis, prontos para qualquer app.
 
 ## Instalação
 
