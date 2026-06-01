@@ -7,16 +7,16 @@ import '../theme/design_tokens.dart';
 /// surface do tema), borda 1px sutil e sombra única opcional via [elevation].
 /// Sem gradientes, sem double-shadow.
 ///
-/// Para versões interativas (tap/scale), envolva com [AppPressable] ou use
-/// [AppCard].
-class Surface extends StatelessWidget {
-  const Surface({
+/// Para versões interativas (tap/scale), envolva com [PrimePressable] ou use
+/// [PrimeCard].
+class PrimeSurface extends StatelessWidget {
+  const PrimeSurface({
     super.key,
     required this.child,
     this.padding,
-    this.borderRadius = AppRadius.lg,
+    this.borderRadius = PrimeRadius.lg,
     this.color,
-    this.elevation = AppElevation.flat,
+    this.elevation = PrimeElevation.flat,
     this.shape = BoxShape.rectangle,
     this.borderColor,
     this.showBorder = true,
@@ -28,7 +28,7 @@ class Surface extends StatelessWidget {
 
   /// Fundo. Default: surface do tema.
   final Color? color;
-  final AppElevation elevation;
+  final PrimeElevation elevation;
   final BoxShape shape;
 
   /// Override da cor da borda. Default: borda neutra do tema.

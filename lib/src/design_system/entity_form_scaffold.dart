@@ -20,8 +20,8 @@ import 'app_error_banner.dart';
 /// - `resizeToAvoidBottomInset: true` (default) + scroll garante campos
 ///   visíveis sobre o teclado;
 /// - banner de erro aparece/some com `AnimatedSize` + crossfade.
-class EntityFormScaffold extends StatelessWidget {
-  const EntityFormScaffold({
+class PrimeEntityFormScaffold extends StatelessWidget {
+  const PrimeEntityFormScaffold({
     super.key,
     required this.title,
     required this.fields,
@@ -57,7 +57,7 @@ class EntityFormScaffold extends StatelessWidget {
             children: [
               Expanded(
                 child: SingleChildScrollView(
-                  padding: const EdgeInsets.all(AppSpacing.xxl),
+                  padding: const EdgeInsets.all(PrimeSpacing.xxl),
                   child: Center(
                     child: ConstrainedBox(
                       constraints: const BoxConstraints(maxWidth: _maxWidth),
@@ -70,30 +70,30 @@ class EntityFormScaffold extends StatelessWidget {
                                 icon: const Icon(Icons.arrow_back),
                                 onPressed: onCancel,
                               ),
-                              const SizedBox(width: AppSpacing.sm),
+                              const SizedBox(width: PrimeSpacing.sm),
                               Expanded(
                                 child: Text(
                                   title,
-                                  style: AppText.display.copyWith(
+                                  style: PrimeText.display.copyWith(
                                     color: cs.textPrimary,
-                                    fontSize: AppText.s22,
+                                    fontSize: PrimeText.s22,
                                   ),
                                 ),
                               ),
                             ],
                           ),
-                          const SizedBox(height: AppSpacing.lg),
-                          AppCard(
-                            padding: const EdgeInsets.all(AppSpacing.xxl),
+                          const SizedBox(height: PrimeSpacing.lg),
+                          PrimeCard(
+                            padding: const EdgeInsets.all(PrimeSpacing.xxl),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.stretch,
                               children: [
                                 AnimatedSize(
-                                  duration: AppMotion.normal,
-                                  curve: AppMotion.curve,
+                                  duration: PrimeMotion.normal,
+                                  curve: PrimeMotion.curve,
                                   alignment: Alignment.topCenter,
                                   child: AnimatedSwitcher(
-                                    duration: AppMotion.normal,
+                                    duration: PrimeMotion.normal,
                                     child: errorMessage == null
                                         ? const SizedBox(
                                             key: ValueKey('no-error'),
@@ -102,9 +102,9 @@ class EntityFormScaffold extends StatelessWidget {
                                         : Padding(
                                             key: ValueKey(errorMessage),
                                             padding: const EdgeInsets.only(
-                                              bottom: AppSpacing.lg,
+                                              bottom: PrimeSpacing.lg,
                                             ),
-                                            child: AppErrorBanner(
+                                            child: PrimeErrorBanner(
                                               message: errorMessage!,
                                             ),
                                           ),
@@ -112,7 +112,7 @@ class EntityFormScaffold extends StatelessWidget {
                                 ),
                                 for (var i = 0; i < fields.length; i++) ...[
                                   if (i > 0)
-                                    const SizedBox(height: AppSpacing.lg),
+                                    const SizedBox(height: PrimeSpacing.lg),
                                   fields[i],
                                 ],
                               ],
@@ -168,24 +168,24 @@ class _StickyFooter extends StatelessWidget {
             border: Border(top: BorderSide(color: cs.border)),
           ),
           child: Padding(
-            padding: const EdgeInsets.all(AppSpacing.xxl),
+            padding: const EdgeInsets.all(PrimeSpacing.xxl),
             child: Center(
               child: ConstrainedBox(
                 constraints: const BoxConstraints(
-                  maxWidth: EntityFormScaffold._maxWidth,
+                  maxWidth: PrimeEntityFormScaffold._maxWidth,
                 ),
                 child: Row(
                   children: [
                     Expanded(
-                      child: AppButton(
+                      child: PrimeButton(
                         label: 'Cancelar',
-                        variant: AppButtonVariant.secondary,
+                        variant: PrimeButtonVariant.secondary,
                         onPressed: saving ? null : onCancel,
                       ),
                     ),
-                    const SizedBox(width: AppSpacing.md),
+                    const SizedBox(width: PrimeSpacing.md),
                     Expanded(
-                      child: AppButton(
+                      child: PrimeButton(
                         key: saveKey,
                         label: saveLabel,
                         loading: saving,

@@ -17,12 +17,12 @@ class PrimeTheme {
   static const String interFontFamily = 'packages/prime_design/Inter';
 
   static ThemeData light({
-    Color brand = AppColors.defaultBrand,
+    Color brand = PrimePalette.defaultBrand,
     String? fontFamily,
   }) => _build(Brightness.light, brand, fontFamily ?? interFontFamily);
 
   static ThemeData dark({
-    Color brand = AppColors.defaultBrand,
+    Color brand = PrimePalette.defaultBrand,
     String? fontFamily,
   }) => _build(Brightness.dark, brand, fontFamily ?? interFontFamily);
 
@@ -49,7 +49,7 @@ class PrimeTheme {
       onSurfaceVariant: colors.textSecondary,
       outline: colors.textMuted,
       outlineVariant: colors.border,
-      error: AppColors.error,
+      error: PrimePalette.error,
       onError: Colors.white,
     );
 
@@ -177,7 +177,7 @@ class PrimeTheme {
         surfaceTintColor: Colors.transparent,
         elevation: 0,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(AppRadius.lg),
+          borderRadius: BorderRadius.circular(PrimeRadius.lg),
         ),
         headerBackgroundColor: colors.accent,
         headerForegroundColor: colors.onAccent,

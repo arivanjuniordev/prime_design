@@ -7,8 +7,8 @@ import 'app_icon_box.dart';
 
 /// Banner horizontal: ícone-box + título + mensagem opcional + trailing.
 /// Fundo tonalizado pela [color], borda fina colorida. Flat, sem sombra.
-class AppBanner extends StatelessWidget {
-  const AppBanner({
+class PrimeBanner extends StatelessWidget {
+  const PrimeBanner({
     super.key,
     required this.icon,
     required this.title,
@@ -16,8 +16,8 @@ class AppBanner extends StatelessWidget {
     this.message,
     this.trailing,
     this.onTap,
-    this.padding = AppSpacing.paddingMd,
-    this.borderRadius = AppRadius.md,
+    this.padding = PrimeSpacing.paddingMd,
+    this.borderRadius = PrimeRadius.md,
     this.backgroundAlpha = 0.08,
     this.borderAlpha = 0.22,
   });
@@ -50,15 +50,15 @@ class AppBanner extends StatelessWidget {
       ),
       child: Row(
         children: [
-          AppIconBox(
+          PrimeIconBox(
             icon: icon,
             color: color,
             size: 36,
             iconSize: 18,
-            borderRadius: AppRadius.sm - 2,
+            borderRadius: PrimeRadius.sm - 2,
             backgroundAlpha: 0.18,
           ),
-          const SizedBox(width: AppSpacing.md),
+          const SizedBox(width: PrimeSpacing.md),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -66,8 +66,8 @@ class AppBanner extends StatelessWidget {
                 Text(
                   title,
                   style: TextStyle(
-                    fontSize: AppText.s14,
-                    fontWeight: AppText.bold,
+                    fontSize: PrimeText.s14,
+                    fontWeight: PrimeText.bold,
                     color: cs.textPrimary,
                     letterSpacing: -0.2,
                   ),
@@ -77,7 +77,7 @@ class AppBanner extends StatelessWidget {
                   Text(
                     message!,
                     style: TextStyle(
-                      fontSize: AppText.s12,
+                      fontSize: PrimeText.s12,
                       height: 1.4,
                       color: cs.textSecondary,
                     ),

@@ -5,8 +5,8 @@ import '../theme/app_text.dart';
 import '../theme/design_tokens.dart';
 
 /// Header de página: eyebrow + título grande + subtítulo + trailing.
-class AppPageHeader extends StatelessWidget {
-  const AppPageHeader({
+class PrimePageHeader extends StatelessWidget {
+  const PrimePageHeader({
     super.key,
     required this.title,
     this.eyebrow,
@@ -34,23 +34,23 @@ class AppPageHeader extends StatelessWidget {
               if (eyebrow != null) ...[
                 Text(
                   eyebrow!.toUpperCase(),
-                  style: AppText.eyebrowColored(cs.textMuted),
+                  style: PrimeText.eyebrowColored(cs.textMuted),
                 ),
-                const SizedBox(height: AppSpacing.xs + 2),
+                const SizedBox(height: PrimeSpacing.xs + 2),
               ],
               Text(
                 title,
                 style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                  fontWeight: AppText.bold,
+                  fontWeight: PrimeText.bold,
                   letterSpacing: -0.5,
                 ),
               ),
               if (subtitle != null) ...[
-                const SizedBox(height: AppSpacing.xs),
+                const SizedBox(height: PrimeSpacing.xs),
                 Text(
                   subtitle!,
                   style: TextStyle(
-                    fontSize: AppText.s13,
+                    fontSize: PrimeText.s13,
                     color: cs.textSecondary,
                     height: 1.4,
                   ),
@@ -60,7 +60,7 @@ class AppPageHeader extends StatelessWidget {
           ),
         ),
         if (trailing != null) ...[
-          const SizedBox(width: AppSpacing.md),
+          const SizedBox(width: PrimeSpacing.md),
           trailing!,
         ],
       ],

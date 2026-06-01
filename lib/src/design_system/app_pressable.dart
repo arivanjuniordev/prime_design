@@ -7,9 +7,9 @@ import '../ui/haptics.dart';
 /// dedo sai do bounding box (drag-out cancel), haptic leve no tap, e fica
 /// não-interativo quando [onTap] é nulo.
 ///
-/// Usado por [AppCard] interativo, FAB customizado, itens de lista, etc.
-class AppPressable extends StatefulWidget {
-  const AppPressable({
+/// Usado por [PrimeCard] interativo, FAB customizado, itens de lista, etc.
+class PrimePressable extends StatefulWidget {
+  const PrimePressable({
     super.key,
     required this.child,
     required this.onTap,
@@ -27,10 +27,10 @@ class AppPressable extends StatefulWidget {
   final HitTestBehavior behavior;
 
   @override
-  State<AppPressable> createState() => _AppPressableState();
+  State<PrimePressable> createState() => _AppPressableState();
 }
 
-class _AppPressableState extends State<AppPressable> {
+class _AppPressableState extends State<PrimePressable> {
   bool _pressed = false;
 
   void _setPressed(bool v) {
@@ -50,18 +50,18 @@ class _AppPressableState extends State<AppPressable> {
       onTap: widget.onTap == null
           ? null
           : () {
-              if (widget.haptic) Haptics.tap();
+              if (widget.haptic) PrimeHaptics.tap();
               widget.onTap!();
             },
       onLongPress: widget.onLongPress == null
           ? null
           : () {
-              if (widget.haptic) Haptics.select();
+              if (widget.haptic) PrimeHaptics.select();
               widget.onLongPress!();
             },
       child: AnimatedScale(
-        duration: AppMotion.fast,
-        curve: AppMotion.curve,
+        duration: PrimeMotion.fast,
+        curve: PrimeMotion.curve,
         scale: _pressed ? widget.scale : 1.0,
         child: widget.child,
       ),

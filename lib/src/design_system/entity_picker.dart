@@ -56,9 +56,9 @@ class EntityPickerField extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(label, style: Theme.of(context).textTheme.labelLarge),
-        const SizedBox(height: AppSpacing.sm),
+        const SizedBox(height: PrimeSpacing.sm),
         InkWell(
-          borderRadius: BorderRadius.circular(AppRadius.md),
+          borderRadius: BorderRadius.circular(PrimeRadius.md),
           onTap: () => _openPicker(context, safeValue),
           child: InputDecorator(
             decoration: const InputDecoration(),
@@ -160,10 +160,10 @@ class _EntityPickerSheetState extends State<_EntityPickerSheet> {
             children: [
               Padding(
                 padding: const EdgeInsets.fromLTRB(
-                  AppSpacing.lg,
+                  PrimeSpacing.lg,
                   0,
-                  AppSpacing.lg,
-                  AppSpacing.sm,
+                  PrimeSpacing.lg,
+                  PrimeSpacing.sm,
                 ),
                 child: Text(
                   widget.title,
@@ -171,17 +171,17 @@ class _EntityPickerSheetState extends State<_EntityPickerSheet> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
-                child: AppSearchField(
+                padding: const EdgeInsets.symmetric(horizontal: PrimeSpacing.lg),
+                child: PrimeSearchField(
                   controller: _searchController,
                   onChanged: (v) => setState(() => _query = v),
                 ),
               ),
-              const SizedBox(height: AppSpacing.sm),
+              const SizedBox(height: PrimeSpacing.sm),
               Flexible(
                 child: filtered.isEmpty && !showEmptyOption
                     ? Padding(
-                        padding: const EdgeInsets.all(AppSpacing.xl),
+                        padding: const EdgeInsets.all(PrimeSpacing.xl),
                         child: Text(
                           'Nenhum resultado.',
                           style: TextStyle(color: cs.textMuted),
@@ -189,7 +189,7 @@ class _EntityPickerSheetState extends State<_EntityPickerSheet> {
                       )
                     : ListView(
                         shrinkWrap: true,
-                        padding: const EdgeInsets.only(bottom: AppSpacing.sm),
+                        padding: const EdgeInsets.only(bottom: PrimeSpacing.sm),
                         children: [
                           if (showEmptyOption)
                             _OptionTile(

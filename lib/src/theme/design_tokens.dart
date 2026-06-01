@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'app_colors.dart';
 
 /// Escala de raios.
-class AppRadius {
-  AppRadius._();
+class PrimeRadius {
+  PrimeRadius._();
   static const double xs = 8;
   static const double sm = 12;
   static const double md = 14;
@@ -13,8 +13,8 @@ class AppRadius {
 }
 
 /// Escala de espaçamento (múltiplos de 4).
-class AppSpacing {
-  AppSpacing._();
+class PrimeSpacing {
+  PrimeSpacing._();
   static const double xxs = 2;
   static const double xs = 4;
   static const double sm = 8;
@@ -33,17 +33,17 @@ class AppSpacing {
 }
 
 /// Elevação semântica única (flat). Cada nível: 1 sombra suave + borda 1px.
-enum AppElevation { none, flat, low, medium, high }
+enum PrimeElevation { none, flat, low, medium, high }
 
-extension AppElevationX on AppElevation {
+extension PrimeElevationX on PrimeElevation {
   List<BoxShadow> shadows(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final base = context.cs.shadowDark;
     switch (this) {
-      case AppElevation.none:
-      case AppElevation.flat:
+      case PrimeElevation.none:
+      case PrimeElevation.flat:
         return const [];
-      case AppElevation.low:
+      case PrimeElevation.low:
         return [
           BoxShadow(
             color: base.withValues(alpha: isDark ? 0.30 : 0.08),
@@ -51,7 +51,7 @@ extension AppElevationX on AppElevation {
             offset: const Offset(0, 2),
           ),
         ];
-      case AppElevation.medium:
+      case PrimeElevation.medium:
         return [
           BoxShadow(
             color: base.withValues(alpha: isDark ? 0.40 : 0.12),
@@ -59,7 +59,7 @@ extension AppElevationX on AppElevation {
             offset: const Offset(0, 6),
           ),
         ];
-      case AppElevation.high:
+      case PrimeElevation.high:
         return [
           BoxShadow(
             color: base.withValues(alpha: isDark ? 0.50 : 0.18),
@@ -71,8 +71,8 @@ extension AppElevationX on AppElevation {
   }
 }
 
-class AppMotion {
-  AppMotion._();
+class PrimeMotion {
+  PrimeMotion._();
   static const Duration fast = Duration(milliseconds: 120);
   static const Duration normal = Duration(milliseconds: 200);
   static const Duration slow = Duration(milliseconds: 320);
@@ -90,23 +90,23 @@ class AppMotion {
       MediaQuery.disableAnimationsOf(context) ? Curves.linear : curve;
 }
 
-enum Breakpoint {
+enum PrimeBreakpoint {
   compact,
   medium,
   expanded,
   large;
 
-  bool get isCompact => this == Breakpoint.compact;
-  bool get isAtLeastMedium => index >= Breakpoint.medium.index;
-  bool get isAtLeastExpanded => index >= Breakpoint.expanded.index;
+  bool get isCompact => this == PrimeBreakpoint.compact;
+  bool get isAtLeastMedium => index >= PrimeBreakpoint.medium.index;
+  bool get isAtLeastExpanded => index >= PrimeBreakpoint.expanded.index;
 
-  static Breakpoint fromWidth(double width) {
-    if (width < 600) return Breakpoint.compact;
-    if (width < 840) return Breakpoint.medium;
-    if (width < 1200) return Breakpoint.expanded;
-    return Breakpoint.large;
+  static PrimeBreakpoint fromWidth(double width) {
+    if (width < 600) return PrimeBreakpoint.compact;
+    if (width < 840) return PrimeBreakpoint.medium;
+    if (width < 1200) return PrimeBreakpoint.expanded;
+    return PrimeBreakpoint.large;
   }
 
-  static Breakpoint of(BuildContext context) =>
+  static PrimeBreakpoint of(BuildContext context) =>
       fromWidth(MediaQuery.sizeOf(context).width);
 }

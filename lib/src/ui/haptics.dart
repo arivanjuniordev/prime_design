@@ -3,8 +3,8 @@ import 'package:flutter/services.dart';
 /// Wrappers centralizados de feedback tátil. Use estes ao invés de chamar
 /// `HapticFeedback.*` direto — assim podemos no futuro desligar global ou
 /// trocar a intensidade por contexto.
-class Haptics {
-  Haptics._();
+class PrimeHaptics {
+  PrimeHaptics._();
 
   /// Tap leve: botões, cards interativos, FABs.
   static Future<void> tap() => HapticFeedback.lightImpact();

@@ -5,14 +5,14 @@ import '../theme/design_tokens.dart';
 /// Quadrado arredondado com ícone sobre fundo tonalizado em [color].
 ///
 /// Fundo: `color.withValues(alpha: backgroundAlpha)`. Sem borda, sem sombra.
-class AppIconBox extends StatelessWidget {
-  const AppIconBox({
+class PrimeIconBox extends StatelessWidget {
+  const PrimeIconBox({
     super.key,
     required this.icon,
     required this.color,
     this.size = 32,
     this.iconSize = 18,
-    this.borderRadius = AppRadius.sm,
+    this.borderRadius = PrimeRadius.sm,
     this.backgroundAlpha = 0.12,
   });
 

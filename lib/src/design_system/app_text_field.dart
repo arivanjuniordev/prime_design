@@ -5,8 +5,8 @@ import '../theme/app_colors.dart';
 import '../theme/design_tokens.dart';
 
 /// Campo de texto com label acima. Estilo herda do inputDecorationTheme.
-class AppTextField extends StatelessWidget {
-  const AppTextField({
+class PrimeTextField extends StatelessWidget {
+  const PrimeTextField({
     super.key,
     required this.label,
     this.controller,
@@ -43,7 +43,7 @@ class AppTextField extends StatelessWidget {
           ExcludeSemantics(
             child: Text(label, style: Theme.of(context).textTheme.labelLarge),
           ),
-          const SizedBox(height: AppSpacing.sm),
+          const SizedBox(height: PrimeSpacing.sm),
         ],
         // Associa semanticamente o label ao campo (leitores de tela).
         // O Text acima é decorativo; a semântica real vem deste Semantics.

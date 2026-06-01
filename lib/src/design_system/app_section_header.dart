@@ -6,8 +6,8 @@ import '../theme/design_tokens.dart';
 import 'app_icon_box.dart';
 
 /// Header de seção: ícone-box + título + badge opcional com contagem.
-class AppSectionHeader extends StatelessWidget {
-  const AppSectionHeader({
+class PrimeSectionHeader extends StatelessWidget {
+  const PrimeSectionHeader({
     super.key,
     required this.title,
     required this.icon,
@@ -29,36 +29,36 @@ class AppSectionHeader extends StatelessWidget {
 
     return Row(
       children: [
-        AppIconBox(
+        PrimeIconBox(
           icon: icon,
           color: color,
           size: 34,
           iconSize: 18,
-          borderRadius: AppRadius.xs + 2,
+          borderRadius: PrimeRadius.xs + 2,
         ),
-        const SizedBox(width: AppSpacing.md),
+        const SizedBox(width: PrimeSpacing.md),
         Flexible(
           child: Text(
             title,
-            style: AppText.sectionTitle.copyWith(color: cs.textPrimary),
+            style: PrimeText.sectionTitle.copyWith(color: cs.textPrimary),
           ),
         ),
         if (badge != null) ...[
-          const SizedBox(width: AppSpacing.sm),
+          const SizedBox(width: PrimeSpacing.sm),
           Container(
             padding: const EdgeInsets.symmetric(
-              horizontal: AppSpacing.sm,
+              horizontal: PrimeSpacing.sm,
               vertical: 2,
             ),
             decoration: BoxDecoration(
               color: color.withValues(alpha: 0.12),
-              borderRadius: BorderRadius.circular(AppRadius.pill),
+              borderRadius: BorderRadius.circular(PrimeRadius.pill),
             ),
             child: Text(
               badge,
               style: TextStyle(
-                fontSize: AppText.s11,
-                fontWeight: AppText.bold,
+                fontSize: PrimeText.s11,
+                fontWeight: PrimeText.bold,
                 color: color,
               ),
             ),

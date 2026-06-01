@@ -4,8 +4,8 @@ import 'package:intl/intl.dart';
 import '../theme/design_tokens.dart';
 
 /// Campo de data: abre showDatePicker ao tocar. Mostra dd/MM/yyyy.
-class AppDateField extends StatelessWidget {
-  const AppDateField({
+class PrimeDateField extends StatelessWidget {
+  const PrimeDateField({
     super.key,
     required this.label,
     required this.value,
@@ -24,9 +24,9 @@ class AppDateField extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(label, style: Theme.of(context).textTheme.labelLarge),
-        const SizedBox(height: AppSpacing.sm),
+        const SizedBox(height: PrimeSpacing.sm),
         InkWell(
-          borderRadius: BorderRadius.circular(AppRadius.md),
+          borderRadius: BorderRadius.circular(PrimeRadius.md),
           onTap: () async {
             final now = DateTime.now();
             final picked = await showDatePicker(

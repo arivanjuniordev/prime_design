@@ -35,7 +35,7 @@ TextEditingValue _atEnd(String text) => TextEditingValue(
 );
 
 /// CPF: `000.000.000-00` (11 dígitos).
-class CpfMaskFormatter extends TextInputFormatter {
+class PrimeCpfMask extends TextInputFormatter {
   @override
   TextEditingValue formatEditUpdate(
     TextEditingValue oldValue,
@@ -48,7 +48,7 @@ class CpfMaskFormatter extends TextInputFormatter {
 }
 
 /// CNPJ: `00.000.000/0000-00` (14 dígitos).
-class CnpjMaskFormatter extends TextInputFormatter {
+class PrimeCnpjMask extends TextInputFormatter {
   @override
   TextEditingValue formatEditUpdate(
     TextEditingValue oldValue,
@@ -61,7 +61,7 @@ class CnpjMaskFormatter extends TextInputFormatter {
 }
 
 /// Telefone: `(00) 00000-0000` (11 dígitos) ou `(00) 0000-0000` (10 dígitos).
-class TelefoneMaskFormatter extends TextInputFormatter {
+class PrimeTelefoneMask extends TextInputFormatter {
   @override
   TextEditingValue formatEditUpdate(
     TextEditingValue oldValue,
@@ -75,7 +75,7 @@ class TelefoneMaskFormatter extends TextInputFormatter {
 }
 
 /// CEP: `00000-000` (8 dígitos).
-class CepMaskFormatter extends TextInputFormatter {
+class PrimeCepMask extends TextInputFormatter {
   @override
   TextEditingValue formatEditUpdate(
     TextEditingValue oldValue,
@@ -92,7 +92,7 @@ class CepMaskFormatter extends TextInputFormatter {
 /// Mantém até 7 caracteres alfanuméricos e força maiúsculo. Insere o hífen
 /// após os 3 primeiros caracteres no formato antigo (4º char é dígito);
 /// no Mercosul (4º char é dígito mas 5º é letra) não há hífen.
-class PlacaMaskFormatter extends TextInputFormatter {
+class PrimePlacaMask extends TextInputFormatter {
   @override
   TextEditingValue formatEditUpdate(
     TextEditingValue oldValue,
@@ -117,7 +117,7 @@ class PlacaMaskFormatter extends TextInputFormatter {
 }
 
 /// RENAVAM: apenas dígitos, máximo 11.
-class RenavamMaskFormatter extends TextInputFormatter {
+class PrimeRenavamMask extends TextInputFormatter {
   @override
   TextEditingValue formatEditUpdate(
     TextEditingValue oldValue,

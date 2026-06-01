@@ -4,8 +4,8 @@ import '../theme/app_text.dart';
 import '../theme/design_tokens.dart';
 
 /// Badge compacto UPPERCASE. `filled=false` usa fundo tingido (alpha 0.14).
-class AppBadge extends StatelessWidget {
-  const AppBadge({
+class PrimeBadge extends StatelessWidget {
+  const PrimeBadge({
     super.key,
     required this.text,
     required this.color,
@@ -22,19 +22,19 @@ class AppBadge extends StatelessWidget {
     final fg = filled ? Colors.white : color;
     return Container(
       padding: const EdgeInsets.symmetric(
-        horizontal: AppSpacing.sm + 2,
-        vertical: AppSpacing.xs,
+        horizontal: PrimeSpacing.sm + 2,
+        vertical: PrimeSpacing.xs,
       ),
       decoration: BoxDecoration(
         color: bg,
-        borderRadius: BorderRadius.circular(AppRadius.xs),
+        borderRadius: BorderRadius.circular(PrimeRadius.xs),
       ),
       child: Text(
         text.toUpperCase(),
         style: TextStyle(
           color: fg,
-          fontSize: AppText.s10,
-          fontWeight: AppText.bold,
+          fontSize: PrimeText.s10,
+          fontWeight: PrimeText.bold,
           letterSpacing: 1.0,
         ),
       ),

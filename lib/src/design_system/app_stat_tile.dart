@@ -6,8 +6,8 @@ import '../theme/design_tokens.dart';
 import 'app_card.dart';
 
 /// Tile de KPI: ícone colorido em box + valor em destaque + label.
-class AppStatTile extends StatelessWidget {
-  const AppStatTile({
+class PrimeStatTile extends StatelessWidget {
+  const PrimeStatTile({
     super.key,
     required this.icon,
     required this.color,
@@ -27,11 +27,11 @@ class AppStatTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final cs = context.cs;
-    return AppCard(
+    return PrimeCard(
       onTap: onTap,
       padding: const EdgeInsets.symmetric(
-        horizontal: AppSpacing.lg,
-        vertical: AppSpacing.md,
+        horizontal: PrimeSpacing.lg,
+        vertical: PrimeSpacing.md,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -42,18 +42,18 @@ class AppStatTile extends StatelessWidget {
             height: 34,
             decoration: BoxDecoration(
               color: color.withValues(alpha: 0.14),
-              borderRadius: BorderRadius.circular(AppRadius.xs),
+              borderRadius: BorderRadius.circular(PrimeRadius.xs),
             ),
             child: Icon(icon, color: color, size: 18, semanticLabel: ''),
           ),
-          const SizedBox(height: AppSpacing.md),
-          Text(value, style: AppText.stat.copyWith(color: cs.textPrimary)),
+          const SizedBox(height: PrimeSpacing.md),
+          Text(value, style: PrimeText.stat.copyWith(color: cs.textPrimary)),
           const SizedBox(height: 2),
           Text(
             label,
             style: TextStyle(
-              fontSize: AppText.s12,
-              fontWeight: AppText.medium,
+              fontSize: PrimeText.s12,
+              fontWeight: PrimeText.medium,
               color: cs.textSecondary,
             ),
           ),
@@ -61,7 +61,7 @@ class AppStatTile extends StatelessWidget {
             const SizedBox(height: 2),
             Text(
               sub!,
-              style: TextStyle(fontSize: AppText.s11, color: cs.textMuted),
+              style: TextStyle(fontSize: PrimeText.s11, color: cs.textMuted),
             ),
           ],
         ],

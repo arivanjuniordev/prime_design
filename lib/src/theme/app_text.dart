@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 /// Escala tipográfica unificada. Presets SEM cor — herdam do Theme.textTheme.
-class AppText {
-  AppText._();
+class PrimeText {
+  PrimeText._();
 
   static const double s10 = 10;
   static const double s11 = 11;

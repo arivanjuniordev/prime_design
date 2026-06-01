@@ -9,7 +9,7 @@ Tema, tokens e ~26 componentes reutilizáveis — extraídos e generalizados do 
 dependencies:
   prime_design:
     git:
-      url: https://github.com/ecosafety/prime_design.git
+      url: https://github.com/arivanjuniordev/prime_design.git
       ref: v0.1.0
     # ou, quando publicado: prime_design: ^0.1.0
 ```
@@ -39,13 +39,14 @@ Text('...', style: TextStyle(color: context.cs.textPrimary));
 
 ## O que vem dentro
 
-- **Tema:** `PrimeTheme.light/dark`, `PrimeColors` (`ThemeExtension`), `AppColors` (neutros/semânticos).
-- **Tokens:** `AppSpacing`, `AppRadius`, `AppElevation`, `AppText`, `AppMotion`, `Breakpoint`.
-- **Componentes:** `AppButton`, `AppCard`, `AppBadge`, `AppChip`, `AppTextField`,
-  `AppDropdownField`, `AppDateField`, `AppSearchField`, `AppEmptyState`, `AppErrorBanner`,
-  `AppStatTile`, `StatusChip`, `EntityPicker`, `EntityFormScaffold`, `ExportButton`, … (26 no total).
-- **Utilitários:** `formatMoney`/`parseMoney` (centavos), `formatLitros`/`parseLitros` (ml),
-  `MoneyTextInputFormatter`, máscaras, `Haptics`, exportação CSV/Excel/PDF.
+- **Tema:** `PrimeTheme.light/dark`, `PrimeColors` (`ThemeExtension`), `PrimePalette` (neutros/semânticos).
+- **Tokens:** `PrimeSpacing`, `PrimeRadius`, `PrimeElevation`, `PrimeText`, `PrimeMotion`, `PrimeBreakpoint`.
+- **Componentes:** `PrimeButton`, `PrimeCard`, `PrimeBadge`, `PrimeChip`, `PrimeTextField`,
+  `PrimeDropdownField`, `PrimeDateField`, `PrimeSearchField`, `PrimeEmptyState`, `PrimeErrorBanner`,
+  `PrimeStatTile`, `PrimeStatusChip`, `PrimeEntityPicker`, `PrimeEntityFormScaffold`, `PrimeExportButton`, … (26 no total).
+- **Utilitários:** `PrimeMoney.format/parse` (centavos), `PrimeLitros.format/parse` (ml),
+  `PrimeMoneyInputFormatter`, máscaras (`PrimeCpfMask`, `PrimePlacaMask`…), `PrimeHaptics`,
+  `PrimeExportService`/`PrimeExportButton` (CSV/Excel/PDF).
 
 ## Convenções (herdadas)
 

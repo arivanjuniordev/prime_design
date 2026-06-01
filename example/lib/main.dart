@@ -51,19 +51,19 @@ class _ExampleAppState extends State<ExampleApp> {
             ],
           ),
           body: ListView(
-            padding: const EdgeInsets.all(AppSpacing.lg),
+            padding: const EdgeInsets.all(PrimeSpacing.lg),
             children: [
-              AppSectionHeader(
+              PrimeSectionHeader(
                 title: 'Marca (parametrizável)',
                 icon: Icons.palette_outlined,
                 color: context.cs.accent,
               ),
               Wrap(
-                spacing: AppSpacing.sm,
-                runSpacing: AppSpacing.sm,
+                spacing: PrimeSpacing.sm,
+                runSpacing: PrimeSpacing.sm,
                 children: [
                   for (final (name, color) in _brands)
-                    AppChip(
+                    PrimeChip(
                       label: name,
                       active: _brand == color,
                       activeColor: color,
@@ -71,67 +71,69 @@ class _ExampleAppState extends State<ExampleApp> {
                     ),
                 ],
               ),
-              const SizedBox(height: AppSpacing.xl),
-              AppSectionHeader(
+              const SizedBox(height: PrimeSpacing.xl),
+              PrimeSectionHeader(
                 title: 'Botões',
                 icon: Icons.smart_button_outlined,
                 color: context.cs.accent,
               ),
               Wrap(
-                spacing: AppSpacing.sm,
-                runSpacing: AppSpacing.sm,
+                spacing: PrimeSpacing.sm,
+                runSpacing: PrimeSpacing.sm,
                 children: [
-                  AppButton(label: 'Primário', onPressed: () {}),
-                  AppButton(
+                  PrimeButton(label: 'Primário', onPressed: () {}),
+                  PrimeButton(
                     label: 'Secundário',
-                    variant: AppButtonVariant.secondary,
+                    variant: PrimeButtonVariant.secondary,
                     onPressed: () {},
                   ),
-                  AppButton(
+                  PrimeButton(
                     label: 'Perigo',
-                    variant: AppButtonVariant.danger,
+                    variant: PrimeButtonVariant.danger,
                     onPressed: () {},
                   ),
                 ],
               ),
-              const SizedBox(height: AppSpacing.xl),
-              AppSectionHeader(
+              const SizedBox(height: PrimeSpacing.xl),
+              PrimeSectionHeader(
                 title: 'Badges & Status',
                 icon: Icons.label_outline,
                 color: context.cs.accent,
               ),
               Wrap(
-                spacing: AppSpacing.sm,
-                runSpacing: AppSpacing.sm,
+                spacing: PrimeSpacing.sm,
+                runSpacing: PrimeSpacing.sm,
                 children: const [
-                  AppBadge(text: 'Novo', color: AppColors.info),
-                  StatusChip('ativo'),
-                  StatusChip('vencido'),
+                  PrimeBadge(text: 'Novo', color: PrimePalette.info),
+                  PrimeStatusChip('ativo'),
+                  PrimeStatusChip('vencido'),
                 ],
               ),
-              const SizedBox(height: AppSpacing.xl),
-              AppSectionHeader(
+              const SizedBox(height: PrimeSpacing.xl),
+              PrimeSectionHeader(
                 title: 'Card',
                 icon: Icons.credit_card_outlined,
                 color: context.cs.accent,
               ),
-              AppCard(
+              PrimeCard(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Dinheiro & litros', style: AppText.cardTitle),
-                    const SizedBox(height: AppSpacing.sm),
-                    Text('${formatMoney(123456)} · ${formatLitros(40000)}'),
+                    Text('Dinheiro & litros', style: PrimeText.cardTitle),
+                    const SizedBox(height: PrimeSpacing.sm),
+                    Text(
+                      '${PrimeMoney.format(123456)} · ${PrimeLitros.format(40000)}',
+                    ),
                   ],
                 ),
               ),
-              const SizedBox(height: AppSpacing.xl),
-              AppSectionHeader(
+              const SizedBox(height: PrimeSpacing.xl),
+              PrimeSectionHeader(
                 title: 'Campo de texto',
                 icon: Icons.text_fields_outlined,
                 color: context.cs.accent,
               ),
-              const AppTextField(label: 'Nome'),
+              const PrimeTextField(label: 'Nome'),
             ],
           ),
         ),

@@ -7,8 +7,8 @@ import '../theme/design_tokens.dart';
 
 /// Chip selecionável flat. Selecionado = fundo [activeColor] sólido; inativo =
 /// fundo surface + borda. Sem sombras coloridas.
-class AppChip extends StatelessWidget {
-  const AppChip({
+class PrimeChip extends StatelessWidget {
+  const PrimeChip({
     super.key,
     required this.label,
     this.icon,
@@ -17,11 +17,11 @@ class AppChip extends StatelessWidget {
     this.inactiveTextColor,
     this.onTap,
     this.padding = const EdgeInsets.symmetric(
-      horizontal: AppSpacing.md,
-      vertical: AppSpacing.sm,
+      horizontal: PrimeSpacing.md,
+      vertical: PrimeSpacing.sm,
     ),
-    this.fontSize = AppText.s13,
-    this.borderRadius = AppRadius.pill,
+    this.fontSize = PrimeText.s13,
+    this.borderRadius = PrimeRadius.pill,
   });
 
   final String label;
@@ -41,7 +41,7 @@ class AppChip extends StatelessWidget {
     final cs = context.cs;
     final accent = activeColor ?? cs.accent;
     final fg = active
-        ? AppColors.onAccent
+        ? PrimePalette.onAccent
         : (inactiveTextColor ?? cs.textPrimary);
 
     return Semantics(
@@ -56,7 +56,7 @@ class AppChip extends StatelessWidget {
                 onTap!();
               },
         child: AnimatedContainer(
-          duration: AppMotion.normalOf(context),
+          duration: PrimeMotion.normalOf(context),
           constraints: const BoxConstraints(minHeight: 36),
           padding: padding,
           decoration: BoxDecoration(
@@ -73,7 +73,7 @@ class AppChip extends StatelessWidget {
             children: [
               if (icon != null) ...[
                 Icon(icon, size: fontSize + 2, color: fg),
-                const SizedBox(width: AppSpacing.xs + 2),
+                const SizedBox(width: PrimeSpacing.xs + 2),
               ],
               Text(
                 label,

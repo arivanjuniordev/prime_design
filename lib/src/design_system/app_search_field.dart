@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class AppSearchField extends StatelessWidget {
-  const AppSearchField({
+class PrimeSearchField extends StatelessWidget {
+  const PrimeSearchField({
     super.key,
     required this.controller,
     required this.onChanged,

@@ -5,8 +5,8 @@ import '../theme/design_tokens.dart';
 
 /// Círculo flat: fundo neutro com borda, ou fundo de marca sólido quando
 /// [active]. Sem gradientes, sem glow.
-class AppCircle extends StatelessWidget {
-  const AppCircle({
+class PrimeCircle extends StatelessWidget {
+  const PrimeCircle({
     super.key,
     required this.child,
     this.size = 40,
@@ -29,7 +29,7 @@ class AppCircle extends StatelessWidget {
     final accent = activeColor ?? cs.accent;
 
     Widget body = AnimatedContainer(
-      duration: AppMotion.normalOf(context),
+      duration: PrimeMotion.normalOf(context),
       width: size,
       height: size,
       decoration: BoxDecoration(

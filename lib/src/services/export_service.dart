@@ -13,7 +13,7 @@ import 'package:intl/intl.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 
-enum ExportFormat { csv, excel, pdf }
+enum PrimeExportFormat { csv, excel, pdf }
 
 /// Argumento serializável passado aos isolates (compute).
 /// Apenas tipos primitivos / coleções → seguro para cruzar o isolate boundary.
@@ -30,13 +30,13 @@ class _ExportArgs {
   final List<List<String>> rows;
 }
 
-class ExportService {
-  ExportService._();
+class PrimeExportService {
+  PrimeExportService._();
 
   /// Gera o arquivo no formato pedido e dispara o save/download.
   /// PDF/Excel são gerados em background isolate (compute).
   static Future<void> export({
-    required ExportFormat format,
+    required PrimeExportFormat format,
     required String baseFilename,
     required String title,
     required List<String> headers,
@@ -47,15 +47,15 @@ class ExportService {
     final MimeType mime;
     final args = _ExportArgs(title: title, headers: headers, rows: rows);
     switch (format) {
-      case ExportFormat.csv:
+      case PrimeExportFormat.csv:
         bytes = csvBytes(headers, rows);
         ext = 'csv';
         mime = MimeType.csv;
-      case ExportFormat.excel:
+      case PrimeExportFormat.excel:
         bytes = await compute(_excelIsolate, args);
         ext = 'xlsx';
         mime = MimeType.microsoftExcel;
-      case ExportFormat.pdf:
+      case PrimeExportFormat.pdf:
         bytes = await compute(_pdfIsolate, args);
         ext = 'pdf';
         mime = MimeType.pdf;

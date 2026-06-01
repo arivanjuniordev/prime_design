@@ -5,17 +5,17 @@ import '../theme/app_text.dart';
 import '../theme/design_tokens.dart';
 
 /// Dica/informação: fundo tonalizado em [color], borda fina colorida, ícone +
-/// texto. Mais leve que [AppBanner] (sem ícone-box, sem título destacado).
-class AppInfoBox extends StatelessWidget {
-  const AppInfoBox({
+/// texto. Mais leve que [PrimeBanner] (sem ícone-box, sem título destacado).
+class PrimeInfoBox extends StatelessWidget {
+  const PrimeInfoBox({
     super.key,
     required this.icon,
     required this.text,
     required this.color,
-    this.padding = AppSpacing.paddingMd,
-    this.borderRadius = AppRadius.md,
+    this.padding = PrimeSpacing.paddingMd,
+    this.borderRadius = PrimeRadius.md,
     this.iconSize = 18,
-    this.fontSize = AppText.s13,
+    this.fontSize = PrimeText.s13,
     this.backgroundAlpha = 0.08,
     this.borderAlpha = 0.22,
   });
@@ -46,7 +46,7 @@ class AppInfoBox extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Icon(icon, size: iconSize, color: color),
-          const SizedBox(width: AppSpacing.sm + 2),
+          const SizedBox(width: PrimeSpacing.sm + 2),
           Expanded(
             child: Text(
               text,
@@ -54,7 +54,7 @@ class AppInfoBox extends StatelessWidget {
                 fontSize: fontSize,
                 height: 1.45,
                 color: context.cs.textPrimary,
-                fontWeight: AppText.regular,
+                fontWeight: PrimeText.regular,
               ),
             ),
           ),

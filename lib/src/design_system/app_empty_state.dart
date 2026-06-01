@@ -4,8 +4,8 @@ import 'package:flutter_animate/flutter_animate.dart';
 import '../theme/app_colors.dart';
 import '../theme/design_tokens.dart';
 
-class AppEmptyState extends StatelessWidget {
-  const AppEmptyState({
+class PrimeEmptyState extends StatelessWidget {
+  const PrimeEmptyState({
     super.key,
     required this.title,
     this.description,
@@ -23,7 +23,7 @@ class AppEmptyState extends StatelessWidget {
     final cs = context.cs;
     return Center(
       child: Padding(
-        padding: const EdgeInsets.all(AppSpacing.xxxl),
+        padding: const EdgeInsets.all(PrimeSpacing.xxxl),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -35,13 +35,13 @@ class AppEmptyState extends StatelessWidget {
                   begin: const Offset(0.8, 0.8),
                 )
                 .fadeIn(),
-            const SizedBox(height: AppSpacing.lg),
+            const SizedBox(height: PrimeSpacing.lg),
             Text(title, style: Theme.of(context).textTheme.titleMedium)
                 .animate()
                 .fadeIn(delay: 80.ms, duration: 250.ms)
                 .slideY(begin: 0.2, end: 0),
             if (description != null) ...[
-              const SizedBox(height: AppSpacing.sm),
+              const SizedBox(height: PrimeSpacing.sm),
               Text(
                 description!,
                 textAlign: TextAlign.center,
@@ -51,7 +51,7 @@ class AppEmptyState extends StatelessWidget {
               ).animate().fadeIn(delay: 140.ms, duration: 250.ms),
             ],
             if (action != null) ...[
-              const SizedBox(height: AppSpacing.xxl),
+              const SizedBox(height: PrimeSpacing.xxl),
               action!.animate().fadeIn(delay: 220.ms, duration: 250.ms),
             ],
           ],

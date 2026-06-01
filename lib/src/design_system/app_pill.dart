@@ -6,20 +6,20 @@ import '../theme/design_tokens.dart';
 
 /// Pill estática (não-selecionável): ícone + texto pequeno em fundo neutro.
 ///
-/// Para versão selecionável use [AppChip]. Para tag UPPERCASE com cor vibrante
-/// use [AppBadge].
-class AppPill extends StatelessWidget {
-  const AppPill({
+/// Para versão selecionável use [PrimeChip]. Para tag UPPERCASE com cor vibrante
+/// use [PrimeBadge].
+class PrimePill extends StatelessWidget {
+  const PrimePill({
     super.key,
     required this.icon,
     required this.text,
     this.padding = const EdgeInsets.symmetric(
-      horizontal: AppSpacing.sm + 2,
-      vertical: AppSpacing.xs + 2,
+      horizontal: PrimeSpacing.sm + 2,
+      vertical: PrimeSpacing.xs + 2,
     ),
-    this.borderRadius = AppRadius.sm,
+    this.borderRadius = PrimeRadius.sm,
     this.iconSize = 13,
-    this.fontSize = AppText.s12,
+    this.fontSize = PrimeText.s12,
     this.color,
   });
 
@@ -47,12 +47,12 @@ class AppPill extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Icon(icon, size: iconSize, color: fg),
-          const SizedBox(width: AppSpacing.xs + 1),
+          const SizedBox(width: PrimeSpacing.xs + 1),
           Text(
             text,
             style: TextStyle(
               fontSize: fontSize,
-              fontWeight: AppText.medium,
+              fontWeight: PrimeText.medium,
               color: fg,
             ),
           ),

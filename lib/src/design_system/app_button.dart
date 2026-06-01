@@ -4,16 +4,16 @@ import '../theme/app_colors.dart';
 import '../theme/design_tokens.dart';
 import '../ui/haptics.dart';
 
-enum AppButtonVariant { primary, secondary, danger }
+enum PrimeButtonVariant { primary, secondary, danger }
 
 /// Botão flat universal (estilo guitarra) com API label-based (estilo Sharon).
 /// Touch target mínimo 48, scale-down ao pressionar, suporte a loading/icon.
-class AppButton extends StatefulWidget {
-  const AppButton({
+class PrimeButton extends StatefulWidget {
+  const PrimeButton({
     super.key,
     required this.label,
     required this.onPressed,
-    this.variant = AppButtonVariant.primary,
+    this.variant = PrimeButtonVariant.primary,
     this.loading = false,
     this.icon,
     this.fullWidth = false,
@@ -21,16 +21,16 @@ class AppButton extends StatefulWidget {
 
   final String label;
   final VoidCallback? onPressed;
-  final AppButtonVariant variant;
+  final PrimeButtonVariant variant;
   final bool loading;
   final IconData? icon;
   final bool fullWidth;
 
   @override
-  State<AppButton> createState() => _AppButtonState();
+  State<PrimeButton> createState() => _AppButtonState();
 }
 
-class _AppButtonState extends State<AppButton> {
+class _AppButtonState extends State<PrimeButton> {
   bool _pressed = false;
 
   @override
@@ -39,17 +39,17 @@ class _AppButtonState extends State<AppButton> {
     final enabled = widget.onPressed != null && !widget.loading;
 
     final bg = switch (widget.variant) {
-      AppButtonVariant.primary => cs.accent,
-      AppButtonVariant.secondary => cs.surface,
-      AppButtonVariant.danger => AppColors.error,
+      PrimeButtonVariant.primary => cs.accent,
+      PrimeButtonVariant.secondary => cs.surface,
+      PrimeButtonVariant.danger => PrimePalette.error,
     };
-    final baseFg = widget.variant == AppButtonVariant.secondary
+    final baseFg = widget.variant == PrimeButtonVariant.secondary
         ? cs.textPrimary
         : Colors.white;
     // Esmaece o conteúdo via alpha na cor quando desabilitado, em vez do widget
     // Opacity (que força saveLayer — flutter_perf.md §7).
     final fg = enabled ? baseFg : baseFg.withValues(alpha: 0.45);
-    final showBorder = widget.variant == AppButtonVariant.secondary;
+    final showBorder = widget.variant == PrimeButtonVariant.secondary;
 
     Widget content = widget.loading
         ? SizedBox(
@@ -63,7 +63,7 @@ class _AppButtonState extends State<AppButton> {
             children: [
               if (widget.icon != null) ...[
                 Icon(widget.icon, size: 18, color: fg),
-                const SizedBox(width: AppSpacing.sm),
+                const SizedBox(width: PrimeSpacing.sm),
               ],
               Text(
                 widget.label,
@@ -73,21 +73,21 @@ class _AppButtonState extends State<AppButton> {
           );
 
     Widget button = AnimatedScale(
-      duration: AppMotion.fast,
+      duration: PrimeMotion.fast,
       scale: _pressed ? 0.97 : 1.0,
       child: AnimatedContainer(
-        duration: AppMotion.normal,
+        duration: PrimeMotion.normal,
         constraints: const BoxConstraints(minHeight: 48),
         padding: const EdgeInsets.symmetric(
-          horizontal: AppSpacing.xxl,
-          vertical: AppSpacing.md,
+          horizontal: PrimeSpacing.xxl,
+          vertical: PrimeSpacing.md,
         ),
         decoration: BoxDecoration(
           color: bg,
-          borderRadius: BorderRadius.circular(AppRadius.md),
+          borderRadius: BorderRadius.circular(PrimeRadius.md),
           border: showBorder ? Border.all(color: cs.border) : null,
-          boxShadow: enabled && widget.variant != AppButtonVariant.secondary
-              ? AppElevation.low.shadows(context)
+          boxShadow: enabled && widget.variant != PrimeButtonVariant.secondary
+              ? PrimeElevation.low.shadows(context)
               : null,
         ),
         child: Center(child: content),
@@ -100,7 +100,7 @@ class _AppButtonState extends State<AppButton> {
       onTapCancel: enabled ? () => setState(() => _pressed = false) : null,
       onTap: enabled
           ? () {
-              Haptics.tap();
+              PrimeHaptics.tap();
               widget.onPressed!();
             }
           : null,

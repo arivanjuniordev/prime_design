@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 import '../theme/design_tokens.dart';
 
-/// Dropdown com label acima, estilo consistente com AppTextField.
-class AppDropdownField<T> extends StatelessWidget {
-  const AppDropdownField({
+/// Dropdown com label acima, estilo consistente com PrimeTextField.
+class PrimeDropdownField<T> extends StatelessWidget {
+  const PrimeDropdownField({
     super.key,
     required this.label,
     required this.value,
@@ -26,7 +26,7 @@ class AppDropdownField<T> extends StatelessWidget {
       children: [
         if (label.isNotEmpty) ...[
           Text(label, style: Theme.of(context).textTheme.labelLarge),
-          const SizedBox(height: AppSpacing.sm),
+          const SizedBox(height: PrimeSpacing.sm),
         ],
         DropdownButtonFormField<T>(
           initialValue: value,

@@ -5,18 +5,18 @@ import '../theme/design_tokens.dart';
 import 'app_pressable.dart';
 
 /// Card flat com borda fina + sombra opcional. Passe [onTap] pra versão
-/// interativa — usa [AppPressable] (scale-down + haptic + drag-out cancel).
-class AppCard extends StatelessWidget {
-  const AppCard({
+/// interativa — usa [PrimePressable] (scale-down + haptic + drag-out cancel).
+class PrimeCard extends StatelessWidget {
+  const PrimeCard({
     super.key,
     required this.child,
     this.padding = const EdgeInsets.symmetric(
-      horizontal: AppSpacing.lg,
-      vertical: AppSpacing.md,
+      horizontal: PrimeSpacing.lg,
+      vertical: PrimeSpacing.md,
     ),
-    this.borderRadius = AppRadius.md,
+    this.borderRadius = PrimeRadius.md,
     this.color,
-    this.elevation = AppElevation.low,
+    this.elevation = PrimeElevation.low,
     this.onTap,
     this.onLongPress,
   });
@@ -25,7 +25,7 @@ class AppCard extends StatelessWidget {
   final EdgeInsetsGeometry padding;
   final double borderRadius;
   final Color? color;
-  final AppElevation elevation;
+  final PrimeElevation elevation;
   final VoidCallback? onTap;
   final VoidCallback? onLongPress;
 
@@ -47,6 +47,6 @@ class AppCard extends StatelessWidget {
 
     if (onTap == null && onLongPress == null) return body;
 
-    return AppPressable(onTap: onTap, onLongPress: onLongPress, child: body);
+    return PrimePressable(onTap: onTap, onLongPress: onLongPress, child: body);
   }
 }

@@ -6,12 +6,12 @@ import '../theme/design_tokens.dart';
 
 /// Bloco shimmer simples (linha, círculo, retângulo). Usa cores do tema
 /// (claro/escuro automático) — nunca cores hardcoded.
-class AppSkeletonBox extends StatelessWidget {
-  const AppSkeletonBox({
+class PrimeSkeletonBox extends StatelessWidget {
+  const PrimeSkeletonBox({
     super.key,
     this.width,
     this.height = 12,
-    this.radius = AppRadius.xs,
+    this.radius = PrimeRadius.xs,
     this.shape = BoxShape.rectangle,
   });
 
@@ -37,9 +37,9 @@ class AppSkeletonBox extends StatelessWidget {
   }
 }
 
-/// Wrapper Shimmer com cores do tema. Envolve uma árvore de [AppSkeletonBox].
-class AppShimmer extends StatelessWidget {
-  const AppShimmer({super.key, required this.child});
+/// Wrapper Shimmer com cores do tema. Envolve uma árvore de [PrimeSkeletonBox].
+class PrimeShimmer extends StatelessWidget {
+  const PrimeShimmer({super.key, required this.child});
 
   final Widget child;
 
@@ -59,37 +59,37 @@ class AppShimmer extends StatelessWidget {
 }
 
 /// Skeleton de linha de lista (card com ícone + texto). Padrão das listagens.
-class AppSkeletonListRow extends StatelessWidget {
-  const AppSkeletonListRow({super.key});
+class PrimeSkeletonListRow extends StatelessWidget {
+  const PrimeSkeletonListRow({super.key});
 
   @override
   Widget build(BuildContext context) {
     final cs = context.cs;
     return Container(
-      padding: const EdgeInsets.all(AppSpacing.lg),
+      padding: const EdgeInsets.all(PrimeSpacing.lg),
       decoration: BoxDecoration(
         color: cs.surface,
-        borderRadius: BorderRadius.circular(AppRadius.md),
+        borderRadius: BorderRadius.circular(PrimeRadius.md),
         border: Border.all(color: cs.border, width: 1),
       ),
-      child: AppShimmer(
+      child: PrimeShimmer(
         child: Row(
           children: [
-            const AppSkeletonBox(width: 44, height: 44, radius: AppRadius.sm),
-            const SizedBox(width: AppSpacing.md),
+            const PrimeSkeletonBox(width: 44, height: 44, radius: PrimeRadius.sm),
+            const SizedBox(width: PrimeSpacing.md),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: const [
-                  AppSkeletonBox(width: 120, height: 14),
-                  SizedBox(height: AppSpacing.sm),
-                  AppSkeletonBox(width: 200, height: 12),
-                  SizedBox(height: AppSpacing.xs),
-                  AppSkeletonBox(width: 80, height: 10),
+                  PrimeSkeletonBox(width: 120, height: 14),
+                  SizedBox(height: PrimeSpacing.sm),
+                  PrimeSkeletonBox(width: 200, height: 12),
+                  SizedBox(height: PrimeSpacing.xs),
+                  PrimeSkeletonBox(width: 80, height: 10),
                 ],
               ),
             ),
-            const AppSkeletonBox(width: 64, height: 22, radius: AppRadius.pill),
+            const PrimeSkeletonBox(width: 64, height: 22, radius: PrimeRadius.pill),
           ],
         ),
       ),
@@ -98,51 +98,51 @@ class AppSkeletonListRow extends StatelessWidget {
 }
 
 /// Lista de skeletons (n linhas) com padding padrão das listagens.
-class AppSkeletonList extends StatelessWidget {
-  const AppSkeletonList({super.key, this.count = 6});
+class PrimeSkeletonList extends StatelessWidget {
+  const PrimeSkeletonList({super.key, this.count = 6});
   final int count;
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
       padding: const EdgeInsets.fromLTRB(
-        AppSpacing.xxl,
+        PrimeSpacing.xxl,
         0,
-        AppSpacing.xxl,
+        PrimeSpacing.xxl,
         100,
       ),
       itemCount: count,
       itemBuilder: (_, _) => const Padding(
-        padding: EdgeInsets.only(bottom: AppSpacing.sm),
-        child: AppSkeletonListRow(),
+        padding: EdgeInsets.only(bottom: PrimeSpacing.sm),
+        child: PrimeSkeletonListRow(),
       ),
     );
   }
 }
 
 /// Skeleton para tiles do dashboard (grid 2x4 ou 4x2 de StatTile).
-class AppSkeletonStatTile extends StatelessWidget {
-  const AppSkeletonStatTile({super.key});
+class PrimeSkeletonStatTile extends StatelessWidget {
+  const PrimeSkeletonStatTile({super.key});
 
   @override
   Widget build(BuildContext context) {
     final cs = context.cs;
     return Container(
-      padding: const EdgeInsets.all(AppSpacing.lg),
+      padding: const EdgeInsets.all(PrimeSpacing.lg),
       decoration: BoxDecoration(
         color: cs.surface,
-        borderRadius: BorderRadius.circular(AppRadius.md),
+        borderRadius: BorderRadius.circular(PrimeRadius.md),
         border: Border.all(color: cs.border, width: 1),
       ),
-      child: AppShimmer(
+      child: PrimeShimmer(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           mainAxisSize: MainAxisSize.min,
           children: const [
-            AppSkeletonBox(width: 32, height: 24, radius: AppRadius.sm),
-            AppSkeletonBox(width: 60, height: 16),
-            AppSkeletonBox(width: 100, height: 10),
+            PrimeSkeletonBox(width: 32, height: 24, radius: PrimeRadius.sm),
+            PrimeSkeletonBox(width: 60, height: 16),
+            PrimeSkeletonBox(width: 100, height: 10),
           ],
         ),
       ),

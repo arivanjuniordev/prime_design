@@ -4,9 +4,9 @@ import '../theme/app_colors.dart';
 import 'app_badge.dart';
 
 /// Mapeia status textuais comuns da frota pra cores semânticas e renderiza
-/// um AppBadge. Centraliza a paleta de status pra toda a app.
-class StatusChip extends StatelessWidget {
-  const StatusChip(this.status, {super.key});
+/// um PrimeBadge. Centraliza a paleta de status pra toda a app.
+class PrimeStatusChip extends StatelessWidget {
+  const PrimeStatusChip(this.status, {super.key});
   final String status;
 
   static Color colorFor(String status) {
@@ -15,7 +15,7 @@ class StatusChip extends StatelessWidget {
       case 'concluida':
       case 'pago':
       case 'valido':
-        return AppColors.success;
+        return PrimePalette.success;
       case 'manutencao':
       case 'agendada':
       case 'em_andamento':
@@ -23,14 +23,14 @@ class StatusChip extends StatelessWidget {
       case 'planejada':
       case 'afastado':
       case 'recorrido':
-        return AppColors.warning;
+        return PrimePalette.warning;
       case 'inativo':
       case 'cancelado':
       case 'cancelada':
       case 'vencido':
-        return AppColors.error;
+        return PrimePalette.error;
       default:
-        return AppColors.info;
+        return PrimePalette.info;
     }
   }
 
@@ -44,7 +44,7 @@ class StatusChip extends StatelessWidget {
       label: 'Status: ${labelFor(status)}',
       container: true,
       child: ExcludeSemantics(
-        child: AppBadge(text: labelFor(status), color: colorFor(status)),
+        child: PrimeBadge(text: labelFor(status), color: colorFor(status)),
       ),
     );
   }

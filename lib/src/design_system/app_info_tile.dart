@@ -8,10 +8,10 @@ import 'app_pressable.dart';
 import 'surface.dart';
 
 /// Tile horizontal genérico: ícone-box + título + subtítulo + trailing.
-/// Quando [elevated] e há [onTap], renderiza como [Surface] elevada e
+/// Quando [elevated] e há [onTap], renderiza como [PrimeSurface] elevada e
 /// pressionável; senão, InkWell simples ou Padding estático.
-class AppInfoTile extends StatelessWidget {
-  const AppInfoTile({
+class PrimeInfoTile extends StatelessWidget {
+  const PrimeInfoTile({
     super.key,
     required this.icon,
     required this.iconColor,
@@ -21,11 +21,11 @@ class AppInfoTile extends StatelessWidget {
     this.subtitleStyle,
     this.trailing,
     this.onTap,
-    this.padding = AppSpacing.paddingLg,
-    this.borderRadius = AppRadius.md,
+    this.padding = PrimeSpacing.paddingLg,
+    this.borderRadius = PrimeRadius.md,
     this.iconBoxSize = 40,
     this.iconSize = 20,
-    this.iconBoxRadius = AppRadius.sm,
+    this.iconBoxRadius = PrimeRadius.sm,
     this.elevated = true,
   });
 
@@ -48,13 +48,13 @@ class AppInfoTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final cs = context.cs;
     final defaultTitle = TextStyle(
-      fontSize: AppText.s14,
-      fontWeight: AppText.semibold,
+      fontSize: PrimeText.s14,
+      fontWeight: PrimeText.semibold,
       color: cs.textPrimary,
       letterSpacing: -0.2,
     );
     final defaultSub = TextStyle(
-      fontSize: AppText.s12,
+      fontSize: PrimeText.s12,
       color: cs.textSecondary,
     );
 
@@ -70,14 +70,14 @@ class AppInfoTile extends StatelessWidget {
 
     final row = Row(
       children: [
-        AppIconBox(
+        PrimeIconBox(
           icon: icon,
           color: iconColor,
           size: iconBoxSize,
           iconSize: iconSize,
           borderRadius: iconBoxRadius,
         ),
-        const SizedBox(width: AppSpacing.md + 2),
+        const SizedBox(width: PrimeSpacing.md + 2),
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -101,8 +101,8 @@ class AppInfoTile extends StatelessWidget {
 
     if (onTap != null) {
       final content = elevated
-          ? Surface(
-              elevation: AppElevation.low,
+          ? PrimeSurface(
+              elevation: PrimeElevation.low,
               padding: padding,
               borderRadius: borderRadius,
               child: row,
@@ -113,12 +113,12 @@ class AppInfoTile extends StatelessWidget {
               clipBehavior: Clip.antiAlias,
               child: Padding(padding: padding, child: row),
             );
-      return AppPressable(onTap: onTap, child: content);
+      return PrimePressable(onTap: onTap, child: content);
     }
 
     if (elevated) {
-      return Surface(
-        elevation: AppElevation.low,
+      return PrimeSurface(
+        elevation: PrimeElevation.low,
         padding: padding,
         borderRadius: borderRadius,
         child: row,

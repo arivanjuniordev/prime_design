@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 /// **Neutros e semânticos são fixos** — não variam por marca. A cor de marca
 /// (accent) é parametrizável e vive em [PrimeColors] (um [ThemeExtension]),
 /// acessada via `context.cs.accent`.
-class AppColors {
-  AppColors._();
+class PrimePalette {
+  PrimePalette._();
 
   // ===== Neutros — Light =====
   static const Color background = Color(0xFFF5F6F8);
@@ -97,20 +97,20 @@ class PrimeColors extends ThemeExtension<PrimeColors> {
     Color brand, {
     Color? accentLight,
     Color? accentDark,
-    Color onAccent = AppColors.onAccent,
+    Color onAccent = PrimePalette.onAccent,
   }) => PrimeColors(
     accent: brand,
     accentLight: accentLight ?? _lighten(brand),
     accentDark: accentDark ?? _darken(brand),
     onAccent: onAccent,
-    background: AppColors.background,
-    surface: AppColors.surface,
-    surfaceAlt: AppColors.surfaceAlt,
-    shadowDark: AppColors.shadowDark,
-    textPrimary: AppColors.textPrimary,
-    textSecondary: AppColors.textSecondary,
-    textMuted: AppColors.textMuted,
-    divider: AppColors.divider,
+    background: PrimePalette.background,
+    surface: PrimePalette.surface,
+    surfaceAlt: PrimePalette.surfaceAlt,
+    shadowDark: PrimePalette.shadowDark,
+    textPrimary: PrimePalette.textPrimary,
+    textSecondary: PrimePalette.textSecondary,
+    textMuted: PrimePalette.textMuted,
+    divider: PrimePalette.divider,
   );
 
   /// Paleta escura derivada de um [brand] (seed).
@@ -118,20 +118,20 @@ class PrimeColors extends ThemeExtension<PrimeColors> {
     Color brand, {
     Color? accentLight,
     Color? accentDark,
-    Color onAccent = AppColors.onAccent,
+    Color onAccent = PrimePalette.onAccent,
   }) => PrimeColors(
     accent: brand,
     accentLight: accentLight ?? _lighten(brand),
     accentDark: accentDark ?? _darken(brand),
     onAccent: onAccent,
-    background: AppColors.backgroundDark,
-    surface: AppColors.surfaceDark,
-    surfaceAlt: AppColors.surfaceAltDark,
-    shadowDark: AppColors.shadowDarkDark,
-    textPrimary: AppColors.textPrimaryDark,
-    textSecondary: AppColors.textSecondaryDark,
-    textMuted: AppColors.textMutedDark,
-    divider: AppColors.dividerDark,
+    background: PrimePalette.backgroundDark,
+    surface: PrimePalette.surfaceDark,
+    surfaceAlt: PrimePalette.surfaceAltDark,
+    shadowDark: PrimePalette.shadowDarkDark,
+    textPrimary: PrimePalette.textPrimaryDark,
+    textSecondary: PrimePalette.textSecondaryDark,
+    textMuted: PrimePalette.textMutedDark,
+    divider: PrimePalette.dividerDark,
   );
 
   @override
@@ -185,8 +185,8 @@ class PrimeColors extends ThemeExtension<PrimeColors> {
 
 /// Acesso à paleta resolvida do tema atual via `BuildContext`.
 /// Uso: `context.cs.accent`, `context.cs.textPrimary`.
-extension AppContextColors on BuildContext {
+extension PrimeContextColors on BuildContext {
   PrimeColors get cs =>
       Theme.of(this).extension<PrimeColors>() ??
-      PrimeColors.light(AppColors.defaultBrand);
+      PrimeColors.light(PrimePalette.defaultBrand);
 }

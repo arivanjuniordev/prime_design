@@ -4,8 +4,8 @@ import '../services/export_service.dart';
 
 /// Botão de exportação (PDF / Excel / CSV) para listagens.
 /// Recebe os cabeçalhos e uma função que extrai a linha de cada item.
-class ExportButton<T> extends StatelessWidget {
-  const ExportButton({
+class PrimeExportButton<T> extends StatelessWidget {
+  const PrimeExportButton({
     super.key,
     required this.items,
     required this.headers,
@@ -20,10 +20,10 @@ class ExportButton<T> extends StatelessWidget {
   final String baseFilename;
   final String title;
 
-  Future<void> _run(BuildContext context, ExportFormat format) async {
+  Future<void> _run(BuildContext context, PrimeExportFormat format) async {
     final messenger = ScaffoldMessenger.of(context);
     try {
-      await ExportService.export(
+      await PrimeExportService.export(
         format: format,
         baseFilename: baseFilename,
         title: title,
@@ -40,14 +40,14 @@ class ExportButton<T> extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PopupMenuButton<ExportFormat>(
+    return PopupMenuButton<PrimeExportFormat>(
       tooltip: 'Exportar',
       icon: const Icon(Icons.file_download_outlined),
       enabled: items.isNotEmpty,
       onSelected: (f) => _run(context, f),
       itemBuilder: (context) => const [
         PopupMenuItem(
-          value: ExportFormat.pdf,
+          value: PrimeExportFormat.pdf,
           child: ListTile(
             dense: true,
             contentPadding: EdgeInsets.zero,
@@ -56,7 +56,7 @@ class ExportButton<T> extends StatelessWidget {
           ),
         ),
         PopupMenuItem(
-          value: ExportFormat.excel,
+          value: PrimeExportFormat.excel,
           child: ListTile(
             dense: true,
             contentPadding: EdgeInsets.zero,
@@ -65,7 +65,7 @@ class ExportButton<T> extends StatelessWidget {
           ),
         ),
         PopupMenuItem(
-          value: ExportFormat.csv,
+          value: PrimeExportFormat.csv,
           child: ListTile(
             dense: true,
             contentPadding: EdgeInsets.zero,
