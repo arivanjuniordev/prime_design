@@ -1,3 +1,10 @@
+Memory leaks
+
+Property-based testing
+
+
+
+
 Ao gerar testes para este package Flutter, siga estas regras:
 
 * NÃO crie testes apenas para aumentar cobertura.
