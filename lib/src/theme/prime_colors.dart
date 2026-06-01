@@ -59,17 +59,18 @@ class PrimePalette {
   static const Color dividerDark = Color(0xFF2D3142);
 
   // ===== Semânticos (fixos) =====
+  // Tons escolhidos para WCAG AA (texto branco ≥ 4.5:1 em badge/chip sólido).
   /// Cor de erro / estado destrutivo.
   static const Color error = Color(0xFFD92D20);
 
   /// Cor de alerta / atenção.
-  static const Color warning = Color(0xFFF59E0B);
+  static const Color warning = Color(0xFFB45309);
 
   /// Cor de sucesso / confirmação.
-  static const Color success = Color(0xFF06A77D);
+  static const Color success = Color(0xFF047857);
 
   /// Cor informativa.
-  static const Color info = Color(0xFF3B82F6);
+  static const Color info = Color(0xFF2563EB);
 
   /// Cor de conteúdo sobre a marca (texto/ícones em cima do accent).
   static const Color onAccent = Colors.white;

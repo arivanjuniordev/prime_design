@@ -69,10 +69,32 @@ void main() {
     handle.dispose();
   });
 
-  // PrimeBadge/PrimeIconBox são puramente apresentacionais (rótulo/ícone
-  // estáticos, sem interação). NÃO há tap target nem comportamento a validar;
-  // o contraste dos badges com cor semântica é tratado no design das cores,
-  // não em teste. Por isso não há testes de a11y para eles aqui.
+  // PrimeIconBox é puramente decorativo (ícone estático, sem interação): não
+  // há tap target nem comportamento a validar, então não tem teste aqui.
+
+  // ---- PrimeBadge sólido: contraste WCAG AA por cor semântica -----------
+  // As cores semânticas foram escurecidas justamente para que o texto branco
+  // do badge `filled` atinja AA (≥4.5:1). Este teste guarda essa garantia.
+  testWidgets('PrimeBadge filled (semânticos) atende contraste AA', (t) async {
+    final handle = t.ensureSemantics();
+    await _pump(
+      t,
+      const Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          PrimeBadge(text: 'ok', color: PrimePalette.success, filled: true),
+          SizedBox(height: 8),
+          PrimeBadge(text: 'erro', color: PrimePalette.error, filled: true),
+          SizedBox(height: 8),
+          PrimeBadge(text: 'alerta', color: PrimePalette.warning, filled: true),
+          SizedBox(height: 8),
+          PrimeBadge(text: 'info', color: PrimePalette.info, filled: true),
+        ],
+      ),
+    );
+    await expectLater(t, meetsGuideline(textContrastGuideline));
+    handle.dispose();
+  });
 
   // ---- PrimeStatusChip: contraste do texto ------------------------------
   testWidgets('PrimeStatusChip("ativo") atende contraste', (t) async {
