@@ -17,6 +17,7 @@ export 'src/theme/prime_colors.dart';
 export 'src/theme/prime_text.dart';
 export 'src/theme/prime_theme.dart';
 export 'src/theme/prime_tokens.dart';
+export 'src/theme/prime_styles.dart';
 
 // ===== Utilitários =====
 export 'src/prime_money.dart';
@@ -41,6 +42,7 @@ export 'src/design_system/prime_info_tile.dart';
 export 'src/design_system/prime_page_header.dart';
 export 'src/design_system/prime_pill.dart';
 export 'src/design_system/prime_pressable.dart';
+export 'src/design_system/prime_reveal.dart';
 export 'src/design_system/prime_search_field.dart';
 export 'src/design_system/prime_section_header.dart';
 export 'src/design_system/prime_skeleton.dart';

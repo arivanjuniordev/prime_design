@@ -23,8 +23,7 @@ void main() {
 
     test('usa a fonte Inter bundlada por padrão', () {
       final theme = PrimeTheme.light(brand: brand);
-      expect(theme.textTheme.bodyMedium?.fontFamily,
-          contains('Inter'));
+      expect(theme.textTheme.bodyMedium?.fontFamily, contains('Inter'));
     });
   });
 

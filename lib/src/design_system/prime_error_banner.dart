@@ -21,11 +21,17 @@ class PrimeErrorBanner extends StatelessWidget {
           decoration: BoxDecoration(
             color: PrimePalette.error.withValues(alpha: 0.10),
             borderRadius: BorderRadius.circular(PrimeRadius.md),
-            border: Border.all(color: PrimePalette.error.withValues(alpha: 0.30)),
+            border: Border.all(
+              color: PrimePalette.error.withValues(alpha: 0.30),
+            ),
           ),
           child: Row(
             children: [
-              const Icon(Icons.error_outline, color: PrimePalette.error, size: 20),
+              const Icon(
+                Icons.error_outline,
+                color: PrimePalette.error,
+                size: 20,
+              ),
               const SizedBox(width: PrimeSpacing.sm),
               Expanded(
                 child: Text(

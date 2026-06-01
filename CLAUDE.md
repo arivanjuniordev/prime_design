@@ -5,7 +5,7 @@ Genérico e reutilizável em qualquer app. Repo: `arivanjuniordev/prime_design`.
 
 ## O que é
 
-Package Flutter (`publish_to: none` por enquanto) que entrega tema, tokens e ~26
+Package Flutter (`publish_to: none` por enquanto) que entrega tema, tokens e ~27
 componentes `Prime*`. Consumido via git dependency:
 
 ```yaml
@@ -31,15 +31,18 @@ lib/
     │   │                       #   PrimeColors (ThemeExtension, marca resolvida) + context.cs
     │   ├── prime_theme.dart     # PrimeTheme.light/dark({brand, fontFamily})
     │   ├── prime_tokens.dart    # PrimeSpacing/Radius/Elevation/Motion/Breakpoint
-    │   └── prime_text.dart      # PrimeText (escala tipográfica)
-    ├── design_system/prime_*.dart   # 26 componentes (1 classe pública por arquivo)
+    │   ├── prime_text.dart      # PrimeText (escala tipográfica)
+    │   └── prime_styles.dart    # PrimeStyles (tokens responsivos: scale por tela, context.styles)
+    ├── design_system/prime_*.dart   # 27 componentes (1 classe pública por arquivo)
+    │                                #   inclui prime_reveal.dart (animação de entrada fade+slide)
     ├── prime_money.dart         # PrimeMoney/PrimeLitros/PrimeMoneyInputFormatter
     ├── prime_masks.dart         # PrimeCpfMask/Cnpj/Telefone/Cep/Placa/Renavam
     ├── ui/prime_haptics.dart    # PrimeHaptics
     └── services/prime_export_service.dart  # PrimeExportService (CSV/Excel/PDF via compute())
 assets/fonts/                    # Inter bundlada (packages/prime_design/Inter)
 example/                         # galeria; troca marca + claro/escuro em runtime
-test/                            # 32 testes (tema, money, masks, status, widgets)
+test/                            # 64 testes (tema, money, masks, status, tokens,
+                                 #   styles, reveal, a11y, picker — lógica/interação)
 doc/PERFORMANCE.md · doc/RESPONSIVE.md
 ```
 

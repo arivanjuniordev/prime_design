@@ -55,8 +55,9 @@ void main() {
       expect(PrimeMotion.curveOf(ctx), Curves.linear);
     });
 
-    testWidgets('*Of retornam a duração normal com disableAnimations = false',
-        (tester) async {
+    testWidgets('*Of retornam a duração normal com disableAnimations = false', (
+      tester,
+    ) async {
       late BuildContext ctx;
       await tester.pumpWidget(
         MediaQuery(

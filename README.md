@@ -1,7 +1,7 @@
 # Prime Design
 
 Design system Flutter **flat 2026** (fonte Inter), com **cor de marca parametrizável**.
-Tema, tokens e ~26 componentes reutilizáveis, prontos para qualquer app.
+Tema, tokens e ~27 componentes reutilizáveis, prontos para qualquer app.
 
 ## Instalação
 
@@ -40,10 +40,12 @@ Text('...', style: TextStyle(color: context.cs.textPrimary));
 ## O que vem dentro
 
 - **Tema:** `PrimeTheme.light/dark`, `PrimeColors` (`ThemeExtension`), `PrimePalette` (neutros/semânticos).
-- **Tokens:** `PrimeSpacing`, `PrimeRadius`, `PrimeElevation`, `PrimeText`, `PrimeMotion`, `PrimeBreakpoint`.
+- **Tokens:** `PrimeSpacing`, `PrimeRadius`, `PrimeElevation`, `PrimeText`, `PrimeMotion`, `PrimeBreakpoint`,
+  `PrimeStyles` (tokens responsivos — escala espaçamento/fonte por tamanho de tela via `context.styles`).
 - **Componentes:** `PrimeButton`, `PrimeCard`, `PrimeBadge`, `PrimeChip`, `PrimeTextField`,
   `PrimeDropdownField`, `PrimeDateField`, `PrimeSearchField`, `PrimeEmptyState`, `PrimeErrorBanner`,
-  `PrimeStatTile`, `PrimeStatusChip`, `PrimeEntityPicker`, `PrimeEntityFormScaffold`, `PrimeExportButton`, … (26 no total).
+  `PrimeStatTile`, `PrimeStatusChip`, `PrimeEntityPicker`, `PrimeEntityFormScaffold`, `PrimeExportButton`,
+  `PrimeReveal` (animação de entrada fade+slide, com `.stagger`; respeita reduce motion), … (27 no total).
 - **Utilitários:** `PrimeMoney.format/parse` (centavos), `PrimeLitros.format/parse` (ml),
   `PrimeMoneyInputFormatter`, máscaras (`PrimeCpfMask`, `PrimePlacaMask`…), `PrimeHaptics`,
   `PrimeExportService`/`PrimeExportButton` (CSV/Excel/PDF).
@@ -57,12 +59,13 @@ Text('...', style: TextStyle(color: context.cs.textPrimary));
 ## Documentação
 
 - [doc/PERFORMANCE.md](doc/PERFORMANCE.md) — anti-padrões evitados, como **medir** (profile mode + DevTools), caçar jank e metas de métricas.
-- [doc/RESPONSIVE.md](doc/RESPONSIVE.md) — breakpoints (`PrimeBreakpoint`), `SafeArea`, layout fluido e padrão adaptativo.
+- [doc/RESPONSIVE.md](doc/RESPONSIVE.md) — breakpoints (`PrimeBreakpoint`), tokens responsivos (`PrimeStyles`), `SafeArea`, layout fluido e padrão adaptativo.
 
 ## Testes
 
 ```bash
-flutter test   # 32 testes: tema/marca, money, máscaras, status, widgets
+flutter test   # 64 testes: tema/marca, money, máscaras, status, tokens, styles,
+               #            reveal, a11y, picker (lógica) e interações
 ```
 
 ## Exemplo

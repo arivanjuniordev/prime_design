@@ -30,11 +30,14 @@ class PrimeTheme {
     String? fontFamily,
   }) => _build(Brightness.dark, brand, fontFamily ?? interFontFamily);
 
-  static ThemeData _build(Brightness brightness, Color brand, String fontFamily) {
+  static ThemeData _build(
+    Brightness brightness,
+    Color brand,
+    String fontFamily,
+  ) {
     final isDark = brightness == Brightness.dark;
     final base = isDark ? ThemeData.dark() : ThemeData.light();
-    final colors =
-        isDark ? PrimeColors.dark(brand) : PrimeColors.light(brand);
+    final colors = isDark ? PrimeColors.dark(brand) : PrimeColors.light(brand);
 
     final textTheme = base.textTheme.apply(
       fontFamily: fontFamily,

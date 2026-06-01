@@ -78,10 +78,7 @@ class PrimeChip extends StatelessWidget {
           decoration: BoxDecoration(
             color: active ? accent : cs.surface,
             borderRadius: BorderRadius.circular(borderRadius),
-            border: Border.all(
-              color: active ? accent : cs.border,
-              width: 1,
-            ),
+            border: Border.all(color: active ? accent : cs.border, width: 1),
           ),
           child: Row(
             mainAxisSize: MainAxisSize.min,

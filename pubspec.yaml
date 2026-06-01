@@ -5,7 +5,7 @@ description: >-
 repository: https://github.com/arivanjuniordev/prime_design
 issue_tracker: https://github.com/arivanjuniordev/prime_design/issues
 topics: [design-system, ui, theme, widgets, material]
-version: 0.1.0
+version: 0.2.0
 # remova publish_to e rode `dart pub publish` quando for publicar
 publish_to: 'none'
 

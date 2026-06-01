@@ -206,8 +206,7 @@ class _EntityPickerSheetState extends State<_EntityPickerSheet> {
                     : ListView.builder(
                         shrinkWrap: true,
                         padding: const EdgeInsets.only(bottom: PrimeSpacing.sm),
-                        itemCount:
-                            filtered.length + (showEmptyOption ? 1 : 0),
+                        itemCount: filtered.length + (showEmptyOption ? 1 : 0),
                         itemBuilder: (context, index) {
                           if (showEmptyOption && index == 0) {
                             return _OptionTile(
@@ -218,14 +217,12 @@ class _EntityPickerSheetState extends State<_EntityPickerSheet> {
                               ).pop(const _PickerResult(null)),
                             );
                           }
-                          final o =
-                              filtered[index - (showEmptyOption ? 1 : 0)];
+                          final o = filtered[index - (showEmptyOption ? 1 : 0)];
                           return _OptionTile(
                             label: o.label,
                             selected: o.id == widget.value,
-                            onTap: () => Navigator.of(
-                              context,
-                            ).pop(_PickerResult(o.id)),
+                            onTap: () =>
+                                Navigator.of(context).pop(_PickerResult(o.id)),
                           );
                         },
                       ),
