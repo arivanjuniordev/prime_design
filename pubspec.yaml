@@ -33,6 +33,10 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^6.0.0
+  # Detecção de memory leaks nos testes (flutter_test_config.dart)
+  leak_tracker_flutter_testing: any
+  # Property-based testing da camada de lógica (money/litros/máscaras)
+  glados: ^1.1.7
 
 flutter:
   uses-material-design: true

@@ -1,7 +1,13 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:leak_tracker_flutter_testing/leak_tracker_flutter_testing.dart';
 import 'package:prime_design/prime_design.dart';
+
+// flutter_animate cria animações internas (Fade/Slide) que o leak_tracker
+// aponta como não-descartadas — leak de terceiro, não do prime_design. Os
+// testes que de fato ANIMAM ignoram o leak; os demais seguem rastreados.
+final _ignoreAnimateLeaks = LeakTesting.settings.withIgnoredAll();
 
 /// Host mínimo com [MediaQuery] controlando `disableAnimations` (reduce motion).
 Widget _host({required bool disableAnimations, required Widget child}) {
@@ -37,6 +43,7 @@ void main() {
 
     testWidgets(
       'disableAnimations=false: anima — há ao menos um Animate na árvore',
+      experimentalLeakTesting: _ignoreAnimateLeaks,
       (tester) async {
         await tester.pumpWidget(
           _host(
@@ -53,23 +60,27 @@ void main() {
   });
 
   group('PrimeReveal.stagger', () {
-    testWidgets('renderiza todos os filhos numa Column', (tester) async {
-      await tester.pumpWidget(
-        _host(
-          disableAnimations: false,
-          child: PrimeReveal.stagger(
-            children: const [Text('a'), Text('b'), Text('c')],
+    testWidgets(
+      'renderiza todos os filhos numa Column',
+      experimentalLeakTesting: _ignoreAnimateLeaks,
+      (tester) async {
+        await tester.pumpWidget(
+          _host(
+            disableAnimations: false,
+            child: PrimeReveal.stagger(
+              children: const [Text('a'), Text('b'), Text('c')],
+            ),
           ),
-        ),
-      );
+        );
 
-      expect(find.text('a'), findsOneWidget);
-      expect(find.text('b'), findsOneWidget);
-      expect(find.text('c'), findsOneWidget);
-      // Empilhados numa única Column.
-      expect(find.byType(Column), findsOneWidget);
-      await tester.pumpAndSettle(); // drena as animações escalonadas
-    });
+        expect(find.text('a'), findsOneWidget);
+        expect(find.text('b'), findsOneWidget);
+        expect(find.text('c'), findsOneWidget);
+        // Empilhados numa única Column.
+        expect(find.byType(Column), findsOneWidget);
+        await tester.pumpAndSettle(); // drena as animações escalonadas
+      },
+    );
 
     testWidgets('stagger sob reduce motion: filhos presentes, nenhum Animate', (
       tester,

@@ -64,8 +64,8 @@ Text('...', style: TextStyle(color: context.cs.textPrimary));
 ## Testes
 
 ```bash
-flutter test   # 64 testes: tema/marca, money, máscaras, status, tokens, styles,
-               #            reveal, a11y, picker (lógica) e interações
+flutter test   # 69 testes: lógica/interação + property-based (glados) na camada
+               # de lógica + leak tracking (leak_tracker) em todos os widget tests
 ```
 
 ## Exemplo

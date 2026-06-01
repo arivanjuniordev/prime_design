@@ -41,8 +41,8 @@ lib/
     └── services/prime_export_service.dart  # PrimeExportService (CSV/Excel/PDF via compute())
 assets/fonts/                    # Inter bundlada (packages/prime_design/Inter)
 example/                         # galeria; troca marca + claro/escuro em runtime
-test/                            # 64 testes (tema, money, masks, status, tokens,
-                                 #   styles, reveal, a11y, picker — lógica/interação)
+test/                            # 69 testes: lógica/interação + property-based
+                                 #   (glados) + leak tracking (flutter_test_config.dart)
 doc/PERFORMANCE.md · doc/RESPONSIVE.md
 ```
 
