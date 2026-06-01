@@ -1,0 +1,92 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
+import '../theme/app_colors.dart';
+import '../theme/app_text.dart';
+import '../theme/design_tokens.dart';
+
+/// Chip selecionável flat. Selecionado = fundo [activeColor] sólido; inativo =
+/// fundo surface + borda. Sem sombras coloridas.
+class AppChip extends StatelessWidget {
+  const AppChip({
+    super.key,
+    required this.label,
+    this.icon,
+    this.active = false,
+    this.activeColor,
+    this.inactiveTextColor,
+    this.onTap,
+    this.padding = const EdgeInsets.symmetric(
+      horizontal: AppSpacing.md,
+      vertical: AppSpacing.sm,
+    ),
+    this.fontSize = AppText.s13,
+    this.borderRadius = AppRadius.pill,
+  });
+
+  final String label;
+  final IconData? icon;
+  final bool active;
+
+  /// Cor quando selecionado. `null` → usa a marca do tema (`context.cs.accent`).
+  final Color? activeColor;
+  final Color? inactiveTextColor;
+  final VoidCallback? onTap;
+  final EdgeInsetsGeometry padding;
+  final double fontSize;
+  final double borderRadius;
+
+  @override
+  Widget build(BuildContext context) {
+    final cs = context.cs;
+    final accent = activeColor ?? cs.accent;
+    final fg = active
+        ? AppColors.onAccent
+        : (inactiveTextColor ?? cs.textPrimary);
+
+    return Semantics(
+      button: true,
+      selected: active,
+      label: label,
+      child: GestureDetector(
+        onTap: onTap == null
+            ? null
+            : () {
+                HapticFeedback.selectionClick();
+                onTap!();
+              },
+        child: AnimatedContainer(
+          duration: AppMotion.normalOf(context),
+          constraints: const BoxConstraints(minHeight: 36),
+          padding: padding,
+          decoration: BoxDecoration(
+            color: active ? accent : cs.surface,
+            borderRadius: BorderRadius.circular(borderRadius),
+            border: Border.all(
+              color: active ? accent : cs.border,
+              width: 1,
+            ),
+          ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              if (icon != null) ...[
+                Icon(icon, size: fontSize + 2, color: fg),
+                const SizedBox(width: AppSpacing.xs + 2),
+              ],
+              Text(
+                label,
+                style: TextStyle(
+                  color: fg,
+                  fontWeight: FontWeight.w600,
+                  fontSize: fontSize,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}

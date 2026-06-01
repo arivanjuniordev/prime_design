@@ -1,0 +1,41 @@
+import 'package:flutter/material.dart';
+
+import '../theme/design_tokens.dart';
+
+/// Dropdown com label acima, estilo consistente com AppTextField.
+class AppDropdownField<T> extends StatelessWidget {
+  const AppDropdownField({
+    super.key,
+    required this.label,
+    required this.value,
+    required this.items,
+    required this.onChanged,
+    this.hint,
+  });
+
+  final String label;
+  final T? value;
+  final List<DropdownMenuItem<T>> items;
+  final ValueChanged<T?> onChanged;
+  final String? hint;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        if (label.isNotEmpty) ...[
+          Text(label, style: Theme.of(context).textTheme.labelLarge),
+          const SizedBox(height: AppSpacing.sm),
+        ],
+        DropdownButtonFormField<T>(
+          initialValue: value,
+          isExpanded: true,
+          items: items,
+          onChanged: onChanged,
+          hint: hint == null ? null : Text(hint!),
+        ),
+      ],
+    );
+  }
+}
