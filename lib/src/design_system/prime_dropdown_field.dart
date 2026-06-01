@@ -4,6 +4,7 @@ import '../theme/prime_tokens.dart';
 
 /// Dropdown com label acima, estilo consistente com PrimeTextField.
 class PrimeDropdownField<T> extends StatelessWidget {
+  /// Cria um dropdown com label acima do campo.
   const PrimeDropdownField({
     super.key,
     required this.label,
@@ -13,10 +14,19 @@ class PrimeDropdownField<T> extends StatelessWidget {
     this.hint,
   });
 
+  /// Rótulo exibido acima do campo; oculto quando vazio.
   final String label;
+
+  /// Valor atualmente selecionado.
   final T? value;
+
+  /// Opções disponíveis no dropdown.
   final List<DropdownMenuItem<T>> items;
+
+  /// Callback chamado quando a seleção muda.
   final ValueChanged<T?> onChanged;
+
+  /// Texto de placeholder exibido quando nada está selecionado.
   final String? hint;
 
   @override

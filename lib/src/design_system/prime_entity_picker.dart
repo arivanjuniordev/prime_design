@@ -4,9 +4,15 @@ import '../theme/prime_colors.dart';
 import '../theme/prime_tokens.dart';
 import 'prime_search_field.dart';
 
+/// Opção de um seletor de entidade: par de [id] e [label].
 class PickerOption {
+  /// Cria uma opção com o [id] (valor) e o [label] (texto exibido).
   const PickerOption(this.id, this.label);
+
+  /// Identificador da opção (valor retornado na seleção).
   final String id;
+
+  /// Texto exibido para a opção.
   final String label;
 }
 
@@ -16,6 +22,7 @@ class PickerOption {
 /// itens em tempo real pelo label (case-insensitive). A API pública é
 /// mantida idêntica ao antigo dropdown.
 class EntityPickerField extends StatelessWidget {
+  /// Cria um seletor de entidade por id, com bottom sheet pesquisável.
   const EntityPickerField({
     super.key,
     required this.label,
@@ -25,9 +32,16 @@ class EntityPickerField extends StatelessWidget {
     this.emptyLabel,
   });
 
+  /// Rótulo exibido acima do seletor.
   final String label;
+
+  /// Id atualmente selecionado; nulo quando nada está selecionado.
   final String? value;
+
+  /// Opções disponíveis para seleção.
   final List<PickerOption> options;
+
+  /// Callback disparado quando o usuário escolhe uma opção.
   final ValueChanged<String?> onChanged;
 
   /// Se != null, adiciona uma opção "vazia" (ex.: "Sem motorista").
@@ -171,7 +185,9 @@ class _EntityPickerSheetState extends State<_EntityPickerSheet> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: PrimeSpacing.lg),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: PrimeSpacing.lg,
+                ),
                 child: PrimeSearchField(
                   controller: _searchController,
                   onChanged: (v) => setState(() => _query = v),
@@ -236,9 +252,7 @@ class _OptionTile extends StatelessWidget {
       title: Text(label, overflow: TextOverflow.ellipsis),
       selected: selected,
       selectedColor: cs.accent,
-      trailing: selected
-          ? Icon(Icons.check, color: cs.accent)
-          : null,
+      trailing: selected ? Icon(Icons.check, color: cs.accent) : null,
       textColor: cs.textPrimary,
       onTap: onTap,
     );

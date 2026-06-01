@@ -4,8 +4,13 @@ import 'package:flutter_animate/flutter_animate.dart';
 import '../theme/prime_colors.dart';
 import '../theme/prime_tokens.dart';
 
+/// Banner de erro com ícone, fundo vermelho tingido e animação de
+/// fade-in + shake leve para chamar atenção.
 class PrimeErrorBanner extends StatelessWidget {
+  /// Cria um banner de erro exibindo [message].
   const PrimeErrorBanner({super.key, required this.message});
+
+  /// Mensagem de erro exibida no banner.
   final String message;
 
   @override

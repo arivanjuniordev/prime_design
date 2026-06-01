@@ -7,6 +7,7 @@ import 'prime_icon_box.dart';
 
 /// Header de seção: ícone-box + título + badge opcional com contagem.
 class PrimeSectionHeader extends StatelessWidget {
+  /// Cria um header de seção com ícone-box, título e badge opcional.
   const PrimeSectionHeader({
     super.key,
     required this.title,
@@ -16,10 +17,19 @@ class PrimeSectionHeader extends StatelessWidget {
     this.badgeText,
   });
 
+  /// Título da seção.
   final String title;
+
+  /// Ícone exibido no box colorido.
   final IconData icon;
+
+  /// Cor do ícone-box e do badge.
   final Color color;
+
+  /// Contagem exibida no badge; usada quando [badgeText] é nulo.
   final int? count;
+
+  /// Texto do badge; tem precedência sobre [count].
   final String? badgeText;
 
   @override

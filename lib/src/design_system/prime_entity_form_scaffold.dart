@@ -21,6 +21,7 @@ import 'prime_error_banner.dart';
 ///   visíveis sobre o teclado;
 /// - banner de erro aparece/some com `AnimatedSize` + crossfade.
 class PrimeEntityFormScaffold extends StatelessWidget {
+  /// Cria o scaffold padrão de formulário de cadastro.
   const PrimeEntityFormScaffold({
     super.key,
     required this.title,
@@ -33,13 +34,28 @@ class PrimeEntityFormScaffold extends StatelessWidget {
     this.saveKey,
   });
 
+  /// Título exibido no header do formulário.
   final String title;
+
+  /// Campos do formulário, renderizados em coluna dentro do card.
   final List<Widget> fields;
+
+  /// Se true, indica que a operação de salvar está em andamento.
   final bool saving;
+
+  /// Callback do botão Cancelar (e do botão voltar).
   final VoidCallback onCancel;
+
+  /// Callback do botão Salvar.
   final VoidCallback onSave;
+
+  /// Mensagem de erro exibida no banner; nulo oculta o banner.
   final String? errorMessage;
+
+  /// Texto do botão Salvar.
   final String saveLabel;
+
+  /// Chave opcional aplicada ao botão Salvar (útil em testes).
   final Key? saveKey;
 
   static const double _maxWidth = 960;

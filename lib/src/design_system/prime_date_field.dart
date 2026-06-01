@@ -5,6 +5,7 @@ import '../theme/prime_tokens.dart';
 
 /// Campo de data: abre showDatePicker ao tocar. Mostra dd/MM/yyyy.
 class PrimeDateField extends StatelessWidget {
+  /// Cria um campo de data.
   const PrimeDateField({
     super.key,
     required this.label,
@@ -12,8 +13,13 @@ class PrimeDateField extends StatelessWidget {
     required this.onChanged,
   });
 
+  /// Rótulo exibido acima do campo.
   final String label;
+
+  /// Data atualmente selecionada. `null` exibe "Selecionar data".
   final DateTime? value;
+
+  /// Chamado ao escolher ou limpar a data (`null` ao limpar).
   final ValueChanged<DateTime?> onChanged;
 
   static final _fmt = DateFormat('dd/MM/yyyy');

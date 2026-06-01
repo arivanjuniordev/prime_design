@@ -8,6 +8,7 @@ import '../theme/prime_tokens.dart';
 /// Chip selecionável flat. Selecionado = fundo [activeColor] sólido; inativo =
 /// fundo surface + borda. Sem sombras coloridas.
 class PrimeChip extends StatelessWidget {
+  /// Cria um chip selecionável flat.
   const PrimeChip({
     super.key,
     required this.label,
@@ -24,16 +25,31 @@ class PrimeChip extends StatelessWidget {
     this.borderRadius = PrimeRadius.pill,
   });
 
+  /// Texto exibido no chip.
   final String label;
+
+  /// Ícone opcional exibido antes do texto.
   final IconData? icon;
+
+  /// Se o chip está selecionado (fundo sólido) ou inativo (borda).
   final bool active;
 
   /// Cor quando selecionado. `null` → usa a marca do tema (`context.cs.accent`).
   final Color? activeColor;
+
+  /// Cor do texto/ícone quando inativo. `null` → `context.cs.textPrimary`.
   final Color? inactiveTextColor;
+
+  /// Callback ao tocar; `null` desabilita a interação.
   final VoidCallback? onTap;
+
+  /// Espaçamento interno do chip.
   final EdgeInsetsGeometry padding;
+
+  /// Tamanho da fonte do texto (e base para o tamanho do ícone).
   final double fontSize;
+
+  /// Raio de arredondamento das bordas.
   final double borderRadius;
 
   @override

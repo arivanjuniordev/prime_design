@@ -6,6 +6,7 @@ import '../theme/prime_tokens.dart';
 ///
 /// Fundo: `color.withValues(alpha: backgroundAlpha)`. Sem borda, sem sombra.
 class PrimeIconBox extends StatelessWidget {
+  /// Cria um box arredondado com ícone sobre fundo tonalizado.
   const PrimeIconBox({
     super.key,
     required this.icon,
@@ -16,11 +17,22 @@ class PrimeIconBox extends StatelessWidget {
     this.backgroundAlpha = 0.12,
   });
 
+  /// Ícone exibido no centro do box.
   final IconData icon;
+
+  /// Cor do ícone e base do fundo tonalizado.
   final Color color;
+
+  /// Largura e altura do box.
   final double size;
+
+  /// Tamanho do ícone.
   final double iconSize;
+
+  /// Raio de arredondamento das bordas.
   final double borderRadius;
+
+  /// Opacidade aplicada a [color] para o fundo.
   final double backgroundAlpha;
 
   @override

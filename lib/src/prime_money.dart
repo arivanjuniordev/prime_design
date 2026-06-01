@@ -56,10 +56,13 @@ class PrimeLitros {
 
 /// Formatter que digita centavos da direita pra esquerda ("R$ 12,34").
 class PrimeMoneyInputFormatter extends TextInputFormatter {
+  /// Cria o formatter de entrada de dinheiro.
   PrimeMoneyInputFormatter();
 
   static final _formatter = NumberFormat.simpleCurrency(locale: 'pt_BR');
 
+  /// Reformata o texto digitado como "R$ 12,34", interpretando os dígitos
+  /// como centavos (preenchidos da direita para a esquerda).
   @override
   TextEditingValue formatEditUpdate(
     TextEditingValue oldValue,

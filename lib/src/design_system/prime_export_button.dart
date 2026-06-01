@@ -5,6 +5,7 @@ import '../services/prime_export_service.dart';
 /// Botão de exportação (PDF / Excel / CSV) para listagens.
 /// Recebe os cabeçalhos e uma função que extrai a linha de cada item.
 class PrimeExportButton<T> extends StatelessWidget {
+  /// Cria um botão de exportação para a lista [items].
   const PrimeExportButton({
     super.key,
     required this.items,
@@ -14,10 +15,19 @@ class PrimeExportButton<T> extends StatelessWidget {
     required this.title,
   });
 
+  /// Itens a serem exportados.
   final List<T> items;
+
+  /// Cabeçalhos das colunas do arquivo exportado.
   final List<String> headers;
+
+  /// Função que extrai a linha (colunas) de cada item.
   final List<String> Function(T) row;
+
+  /// Nome base do arquivo gerado (sem extensão).
   final String baseFilename;
+
+  /// Título do documento exportado.
   final String title;
 
   Future<void> _run(BuildContext context, PrimeExportFormat format) async {

@@ -4,7 +4,10 @@ import 'package:flutter_animate/flutter_animate.dart';
 import '../theme/prime_colors.dart';
 import '../theme/prime_tokens.dart';
 
+/// Estado vazio centralizado com ícone, título, descrição e ação opcionais,
+/// animados na entrada (scale + fade).
 class PrimeEmptyState extends StatelessWidget {
+  /// Cria um estado vazio com [title] e elementos opcionais.
   const PrimeEmptyState({
     super.key,
     required this.title,
@@ -13,9 +16,16 @@ class PrimeEmptyState extends StatelessWidget {
     this.action,
   });
 
+  /// Título principal exibido abaixo do ícone.
   final String title;
+
+  /// Descrição secundária opcional.
   final String? description;
+
+  /// Ícone exibido no topo (default: caixa de entrada).
   final IconData icon;
+
+  /// Widget de ação opcional (ex.: botão) exibido no rodapé.
   final Widget? action;
 
   @override

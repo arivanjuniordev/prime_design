@@ -16,11 +16,15 @@ class PrimeTheme {
   /// Família da fonte Inter empacotada neste package.
   static const String interFontFamily = 'packages/prime_design/Inter';
 
+  /// Constrói o tema claro para a cor de marca [brand], com [fontFamily]
+  /// opcional (padrão: Inter empacotada).
   static ThemeData light({
     Color brand = PrimePalette.defaultBrand,
     String? fontFamily,
   }) => _build(Brightness.light, brand, fontFamily ?? interFontFamily);
 
+  /// Constrói o tema escuro para a cor de marca [brand], com [fontFamily]
+  /// opcional (padrão: Inter empacotada).
   static ThemeData dark({
     Color brand = PrimePalette.defaultBrand,
     String? fontFamily,

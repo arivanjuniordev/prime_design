@@ -11,6 +11,7 @@ import 'prime_surface.dart';
 /// Quando [elevated] e há [onTap], renderiza como [PrimeSurface] elevada e
 /// pressionável; senão, InkWell simples ou Padding estático.
 class PrimeInfoTile extends StatelessWidget {
+  /// Cria um tile horizontal com ícone, título, subtítulo e trailing.
   const PrimeInfoTile({
     super.key,
     required this.icon,
@@ -29,19 +30,46 @@ class PrimeInfoTile extends StatelessWidget {
     this.elevated = true,
   });
 
+  /// Ícone exibido no ícone-box à esquerda.
   final IconData icon;
+
+  /// Cor do ícone (e do fundo tonalizado do ícone-box).
   final Color iconColor;
+
+  /// Texto principal do tile.
   final String title;
+
+  /// Texto secundário opcional, abaixo do título.
   final String? subtitle;
+
+  /// Estilo customizado do título; usa o padrão quando nulo.
   final TextStyle? titleStyle;
+
+  /// Estilo customizado do subtítulo; usa o padrão quando nulo.
   final TextStyle? subtitleStyle;
+
+  /// Widget exibido à direita; quando nulo e há [onTap], mostra um chevron.
   final Widget? trailing;
+
+  /// Callback de toque; quando nulo o tile é estático.
   final VoidCallback? onTap;
+
+  /// Espaçamento interno do tile.
   final EdgeInsetsGeometry padding;
+
+  /// Raio de canto do tile.
   final double borderRadius;
+
+  /// Tamanho (largura/altura) do ícone-box.
   final double iconBoxSize;
+
+  /// Tamanho do ícone dentro do ícone-box.
   final double iconSize;
+
+  /// Raio de canto do ícone-box.
   final double iconBoxRadius;
+
+  /// Se true (e com [onTap]), renderiza como superfície elevada e pressionável.
   final bool elevated;
 
   @override

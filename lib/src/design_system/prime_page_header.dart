@@ -6,6 +6,7 @@ import '../theme/prime_tokens.dart';
 
 /// Header de página: eyebrow + título grande + subtítulo + trailing.
 class PrimePageHeader extends StatelessWidget {
+  /// Cria um header de página.
   const PrimePageHeader({
     super.key,
     required this.title,
@@ -14,9 +15,16 @@ class PrimePageHeader extends StatelessWidget {
     this.trailing,
   });
 
+  /// Título grande exibido em destaque.
   final String title;
+
+  /// Texto pequeno acima do título (renderizado em maiúsculas). Opcional.
   final String? eyebrow;
+
+  /// Texto secundário abaixo do título. Opcional.
   final String? subtitle;
+
+  /// Widget alinhado à direita do header (ex.: botão de ação). Opcional.
   final Widget? trailing;
 
   @override

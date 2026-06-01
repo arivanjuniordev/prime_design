@@ -7,6 +7,7 @@ import '../theme/prime_tokens.dart';
 /// Dica/informação: fundo tonalizado em [color], borda fina colorida, ícone +
 /// texto. Mais leve que [PrimeBanner] (sem ícone-box, sem título destacado).
 class PrimeInfoBox extends StatelessWidget {
+  /// Cria uma caixa de dica/informação com ícone e texto.
   const PrimeInfoBox({
     super.key,
     required this.icon,
@@ -20,14 +21,31 @@ class PrimeInfoBox extends StatelessWidget {
     this.borderAlpha = 0.22,
   });
 
+  /// Ícone exibido à esquerda do texto.
   final IconData icon;
+
+  /// Texto informativo exibido na caixa.
   final String text;
+
+  /// Cor base usada no ícone, no fundo tonalizado e na borda.
   final Color color;
+
+  /// Espaçamento interno da caixa.
   final EdgeInsetsGeometry padding;
+
+  /// Raio de canto da caixa.
   final double borderRadius;
+
+  /// Tamanho do ícone.
   final double iconSize;
+
+  /// Tamanho da fonte do texto.
   final double fontSize;
+
+  /// Opacidade do fundo tonalizado pela [color].
   final double backgroundAlpha;
+
+  /// Opacidade da borda colorida.
   final double borderAlpha;
 
   @override

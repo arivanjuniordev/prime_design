@@ -9,6 +9,7 @@ import '../ui/prime_haptics.dart';
 ///
 /// Usado por [PrimeCard] interativo, FAB customizado, itens de lista, etc.
 class PrimePressable extends StatefulWidget {
+  /// Cria um wrapper de interação com scale-down e haptic.
   const PrimePressable({
     super.key,
     required this.child,
@@ -19,11 +20,22 @@ class PrimePressable extends StatefulWidget {
     this.behavior = HitTestBehavior.opaque,
   });
 
+  /// Widget filho que recebe a interação.
   final Widget child;
+
+  /// Callback ao tocar; `null` torna o wrapper não-interativo.
   final VoidCallback? onTap;
+
+  /// Callback ao pressionar e segurar.
   final VoidCallback? onLongPress;
+
+  /// Fator de escala aplicado enquanto pressionado (default 0.97).
   final double scale;
+
+  /// Se dispara feedback háptico no tap/long-press.
   final bool haptic;
+
+  /// Comportamento de hit-test do gesto.
   final HitTestBehavior behavior;
 
   @override

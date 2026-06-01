@@ -7,6 +7,7 @@ import 'prime_pressable.dart';
 /// Card flat com borda fina + sombra opcional. Passe [onTap] pra versão
 /// interativa — usa [PrimePressable] (scale-down + haptic + drag-out cancel).
 class PrimeCard extends StatelessWidget {
+  /// Cria um card flat, opcionalmente interativo via [onTap]/[onLongPress].
   const PrimeCard({
     super.key,
     required this.child,
@@ -21,12 +22,25 @@ class PrimeCard extends StatelessWidget {
     this.onLongPress,
   });
 
+  /// Conteúdo do card.
   final Widget child;
+
+  /// Espaçamento interno do card.
   final EdgeInsetsGeometry padding;
+
+  /// Raio de arredondamento das bordas.
   final double borderRadius;
+
+  /// Cor de fundo. `null` → `context.cs.surface`.
   final Color? color;
+
+  /// Nível de elevação (sombra) do card.
   final PrimeElevation elevation;
+
+  /// Callback ao tocar; quando definido torna o card interativo.
   final VoidCallback? onTap;
+
+  /// Callback ao pressionar e segurar; quando definido torna o card interativo.
   final VoidCallback? onLongPress;
 
   @override

@@ -7,6 +7,7 @@ import '../theme/prime_tokens.dart';
 /// Bloco shimmer simples (linha, círculo, retângulo). Usa cores do tema
 /// (claro/escuro automático) — nunca cores hardcoded.
 class PrimeSkeletonBox extends StatelessWidget {
+  /// Cria um bloco shimmer (linha, círculo ou retângulo).
   const PrimeSkeletonBox({
     super.key,
     this.width,
@@ -15,9 +16,16 @@ class PrimeSkeletonBox extends StatelessWidget {
     this.shape = BoxShape.rectangle,
   });
 
+  /// Largura do bloco; nulo ocupa a largura disponível.
   final double? width;
+
+  /// Altura do bloco.
   final double height;
+
+  /// Raio de canto (ignorado quando [shape] é círculo).
   final double radius;
+
+  /// Forma do bloco (retângulo ou círculo).
   final BoxShape shape;
 
   @override
@@ -39,8 +47,10 @@ class PrimeSkeletonBox extends StatelessWidget {
 
 /// Wrapper Shimmer com cores do tema. Envolve uma árvore de [PrimeSkeletonBox].
 class PrimeShimmer extends StatelessWidget {
+  /// Cria um wrapper de shimmer ao redor de [child].
   const PrimeShimmer({super.key, required this.child});
 
+  /// Árvore de widgets (geralmente [PrimeSkeletonBox]) animada pelo shimmer.
   final Widget child;
 
   @override
@@ -60,6 +70,7 @@ class PrimeShimmer extends StatelessWidget {
 
 /// Skeleton de linha de lista (card com ícone + texto). Padrão das listagens.
 class PrimeSkeletonListRow extends StatelessWidget {
+  /// Cria uma linha de skeleton para listagens.
   const PrimeSkeletonListRow({super.key});
 
   @override
@@ -75,7 +86,11 @@ class PrimeSkeletonListRow extends StatelessWidget {
       child: PrimeShimmer(
         child: Row(
           children: [
-            const PrimeSkeletonBox(width: 44, height: 44, radius: PrimeRadius.sm),
+            const PrimeSkeletonBox(
+              width: 44,
+              height: 44,
+              radius: PrimeRadius.sm,
+            ),
             const SizedBox(width: PrimeSpacing.md),
             Expanded(
               child: Column(
@@ -89,7 +104,11 @@ class PrimeSkeletonListRow extends StatelessWidget {
                 ],
               ),
             ),
-            const PrimeSkeletonBox(width: 64, height: 22, radius: PrimeRadius.pill),
+            const PrimeSkeletonBox(
+              width: 64,
+              height: 22,
+              radius: PrimeRadius.pill,
+            ),
           ],
         ),
       ),
@@ -99,7 +118,10 @@ class PrimeSkeletonListRow extends StatelessWidget {
 
 /// Lista de skeletons (n linhas) com padding padrão das listagens.
 class PrimeSkeletonList extends StatelessWidget {
+  /// Cria uma lista com [count] linhas de skeleton.
   const PrimeSkeletonList({super.key, this.count = 6});
+
+  /// Quantidade de linhas de skeleton exibidas.
   final int count;
 
   @override
@@ -122,6 +144,7 @@ class PrimeSkeletonList extends StatelessWidget {
 
 /// Skeleton para tiles do dashboard (grid 2x4 ou 4x2 de StatTile).
 class PrimeSkeletonStatTile extends StatelessWidget {
+  /// Cria um skeleton para um tile de estatística do dashboard.
   const PrimeSkeletonStatTile({super.key});
 
   @override

@@ -7,6 +7,7 @@ import 'prime_card.dart';
 
 /// Tile de KPI: ícone colorido em box + valor em destaque + label.
 class PrimeStatTile extends StatelessWidget {
+  /// Cria um tile de KPI com ícone, valor em destaque e label.
   const PrimeStatTile({
     super.key,
     required this.icon,
@@ -17,11 +18,22 @@ class PrimeStatTile extends StatelessWidget {
     this.onTap,
   });
 
+  /// Ícone decorativo exibido no box colorido.
   final IconData icon;
+
+  /// Cor do ícone e do fundo tonalizado do box.
   final Color color;
+
+  /// Rótulo descritivo do indicador.
   final String label;
+
+  /// Valor em destaque do indicador.
   final String value;
+
+  /// Texto secundário opcional exibido abaixo do label.
   final String? sub;
+
+  /// Callback ao tocar; `null` deixa o tile não-interativo.
   final VoidCallback? onTap;
 
   @override

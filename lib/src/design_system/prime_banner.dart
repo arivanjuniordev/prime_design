@@ -8,6 +8,7 @@ import 'prime_icon_box.dart';
 /// Banner horizontal: ícone-box + título + mensagem opcional + trailing.
 /// Fundo tonalizado pela [color], borda fina colorida. Flat, sem sombra.
 class PrimeBanner extends StatelessWidget {
+  /// Cria um banner com ícone-box, título e mensagem opcional.
   const PrimeBanner({
     super.key,
     required this.icon,
@@ -22,15 +23,34 @@ class PrimeBanner extends StatelessWidget {
     this.borderAlpha = 0.22,
   });
 
+  /// Ícone exibido no ícone-box à esquerda.
   final IconData icon;
+
+  /// Texto principal do banner.
   final String title;
+
+  /// Cor base usada no ícone, no fundo tonalizado e na borda.
   final Color color;
+
+  /// Mensagem secundária opcional, abaixo do título.
   final String? message;
+
+  /// Widget exibido à direita do banner.
   final Widget? trailing;
+
+  /// Callback de toque; quando nulo o banner é estático.
   final VoidCallback? onTap;
+
+  /// Espaçamento interno do banner.
   final EdgeInsetsGeometry padding;
+
+  /// Raio de canto do banner.
   final double borderRadius;
+
+  /// Opacidade do fundo tonalizado pela [color].
   final double backgroundAlpha;
+
+  /// Opacidade da borda colorida.
   final double borderAlpha;
 
   @override

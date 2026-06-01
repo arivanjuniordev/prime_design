@@ -9,6 +9,7 @@ import '../theme/prime_tokens.dart';
 /// Para versão selecionável use [PrimeChip]. Para tag UPPERCASE com cor vibrante
 /// use [PrimeBadge].
 class PrimePill extends StatelessWidget {
+  /// Cria uma pill estática com ícone + texto.
   const PrimePill({
     super.key,
     required this.icon,
@@ -23,12 +24,25 @@ class PrimePill extends StatelessWidget {
     this.color,
   });
 
+  /// Ícone exibido antes do texto.
   final IconData icon;
+
+  /// Texto exibido na pill.
   final String text;
+
+  /// Espaçamento interno da pill.
   final EdgeInsetsGeometry padding;
+
+  /// Raio de arredondamento das bordas.
   final double borderRadius;
+
+  /// Tamanho do ícone.
   final double iconSize;
+
+  /// Tamanho da fonte do texto.
   final double fontSize;
+
+  /// Cor do ícone e do texto. `null` → `context.cs.textSecondary`.
   final Color? color;
 
   @override

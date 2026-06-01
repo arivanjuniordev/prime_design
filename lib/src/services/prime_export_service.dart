@@ -13,7 +13,17 @@ import 'package:intl/intl.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 
-enum PrimeExportFormat { csv, excel, pdf }
+/// Formato de saída suportado pela exportação de listas.
+enum PrimeExportFormat {
+  /// Arquivo CSV (separado por `;`, padrão pt-BR no Excel).
+  csv,
+
+  /// Planilha Excel (`.xlsx`).
+  excel,
+
+  /// Documento PDF (tabela paginada A4 paisagem).
+  pdf,
+}
 
 /// Argumento serializável passado aos isolates (compute).
 /// Apenas tipos primitivos / coleções → seguro para cruzar o isolate boundary.
@@ -30,6 +40,10 @@ class _ExportArgs {
   final List<List<String>> rows;
 }
 
+/// Serviço de exportação de listas para CSV, Excel (`.xlsx`) e PDF.
+///
+/// Salva o arquivo via `file_saver` (download no web, share/salvar no
+/// mobile/desktop). PDF e Excel são gerados em isolate de background.
 class PrimeExportService {
   PrimeExportService._();
 

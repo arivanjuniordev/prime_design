@@ -6,6 +6,7 @@ import '../theme/prime_tokens.dart';
 /// Círculo flat: fundo neutro com borda, ou fundo de marca sólido quando
 /// [active]. Sem gradientes, sem glow.
 class PrimeCircle extends StatelessWidget {
+  /// Cria um círculo flat.
   const PrimeCircle({
     super.key,
     required this.child,
@@ -15,12 +16,20 @@ class PrimeCircle extends StatelessWidget {
     this.onTap,
   });
 
+  /// Conteúdo centralizado dentro do círculo (ícone, texto etc.).
   final Widget child;
+
+  /// Diâmetro do círculo em pixels lógicos.
   final double size;
+
+  /// Quando `true`, usa fundo de marca sólido; caso contrário, fundo neutro
+  /// com borda.
   final bool active;
 
   /// Cor quando ativo. `null` → usa a marca do tema (`context.cs.accent`).
   final Color? activeColor;
+
+  /// Callback de toque. Quando `null`, o círculo não é interativo.
   final VoidCallback? onTap;
 
   @override

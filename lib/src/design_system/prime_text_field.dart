@@ -6,6 +6,7 @@ import '../theme/prime_tokens.dart';
 
 /// Campo de texto com label acima. Estilo herda do inputDecorationTheme.
 class PrimeTextField extends StatelessWidget {
+  /// Cria um campo de texto com label acima.
   const PrimeTextField({
     super.key,
     required this.label,
@@ -21,16 +22,37 @@ class PrimeTextField extends StatelessWidget {
     this.onChanged,
   });
 
+  /// Rótulo exibido acima do campo.
   final String label;
+
+  /// Controlador do texto do campo.
   final TextEditingController? controller;
+
+  /// Texto de placeholder exibido quando o campo está vazio.
   final String? hint;
+
+  /// Mensagem de erro exibida abaixo do campo.
   final String? errorText;
+
+  /// Se true, oculta o texto digitado (senhas).
   final bool obscureText;
+
+  /// Tipo de teclado a ser exibido.
   final TextInputType? keyboardType;
+
+  /// Formatadores aplicados à entrada do usuário.
   final List<TextInputFormatter>? inputFormatters;
+
+  /// Ícone exibido no início do campo.
   final IconData? prefixIcon;
+
+  /// Número máximo de caracteres aceitos.
   final int? maxLength;
+
+  /// Número máximo de linhas do campo.
   final int maxLines;
+
+  /// Callback disparado a cada alteração do texto.
   final ValueChanged<String>? onChanged;
 
   @override

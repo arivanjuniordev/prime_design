@@ -5,6 +5,7 @@ import '../theme/prime_tokens.dart';
 
 /// Badge compacto UPPERCASE. `filled=false` usa fundo tingido (alpha 0.14).
 class PrimeBadge extends StatelessWidget {
+  /// Cria um badge.
   const PrimeBadge({
     super.key,
     required this.text,
@@ -12,8 +13,14 @@ class PrimeBadge extends StatelessWidget {
     this.filled = false,
   });
 
+  /// Texto do badge (renderizado em maiúsculas).
   final String text;
+
+  /// Cor base do badge (texto e fundo derivam dela).
   final Color color;
+
+  /// Quando `true`, fundo sólido com texto branco; caso contrário, fundo
+  /// tingido (alpha 0.14) com texto na [color].
   final bool filled;
 
   @override

@@ -9,32 +9,72 @@ class PrimePalette {
   PrimePalette._();
 
   // ===== Neutros — Light =====
+  /// Fundo da tela (tema claro).
   static const Color background = Color(0xFFF5F6F8);
+
+  /// Superfície primária — cartões e painéis (tema claro).
   static const Color surface = Color(0xFFFFFFFF);
+
+  /// Superfície alternativa — fundos sutis e inputs (tema claro).
   static const Color surfaceAlt = Color(0xFFF0F2F5);
+
+  /// Cor-base das sombras (tema claro).
   static const Color shadowDark = Color(0xFF1F2330);
+
+  /// Texto primário — alto contraste (tema claro).
   static const Color textPrimary = Color(0xFF101218);
+
+  /// Texto secundário — contraste médio (tema claro).
   static const Color textSecondary = Color(0xFF4B5163);
+
+  /// Texto atenuado — baixo contraste / placeholders (tema claro).
   static const Color textMuted = Color(0xFF6B7280);
+
+  /// Cor de divisores e bordas finas (tema claro).
   static const Color divider = Color(0xFFE5E7EB);
 
   // ===== Neutros — Dark =====
+  /// Fundo da tela (tema escuro).
   static const Color backgroundDark = Color(0xFF0E1014);
+
+  /// Superfície primária — cartões e painéis (tema escuro).
   static const Color surfaceDark = Color(0xFF181B22);
+
+  /// Superfície alternativa — fundos sutis e inputs (tema escuro).
   static const Color surfaceAltDark = Color(0xFF1F232C);
+
+  /// Cor-base das sombras (tema escuro).
   static const Color shadowDarkDark = Color(0xFF000000);
+
+  /// Texto primário — alto contraste (tema escuro).
   static const Color textPrimaryDark = Color(0xFFEDEFF5);
+
+  /// Texto secundário — contraste médio (tema escuro).
   static const Color textSecondaryDark = Color(0xFFB2B8C5);
+
+  /// Texto atenuado — baixo contraste / placeholders (tema escuro).
   static const Color textMutedDark = Color(0xFF7B8294);
+
+  /// Cor de divisores e bordas finas (tema escuro).
   static const Color dividerDark = Color(0xFF2D3142);
 
   // ===== Semânticos (fixos) =====
+  /// Cor de erro / estado destrutivo.
   static const Color error = Color(0xFFD92D20);
+
+  /// Cor de alerta / atenção.
   static const Color warning = Color(0xFFF59E0B);
+
+  /// Cor de sucesso / confirmação.
   static const Color success = Color(0xFF06A77D);
+
+  /// Cor informativa.
   static const Color info = Color(0xFF3B82F6);
 
+  /// Cor de conteúdo sobre a marca (texto/ícones em cima do accent).
   static const Color onAccent = Colors.white;
+
+  /// Cor do scrim (overlay escurecedor de modais/sheets).
   static const Color scrim = Color(0xFF000000);
 
   /// Marca padrão do package (esmeralda Ecosafety). Apps passam a sua via
@@ -59,6 +99,7 @@ Color _darken(Color c, [double amount = 0.10]) {
 /// do brilho corrente. Acesse via `context.cs` — ex.: `context.cs.accent`.
 @immutable
 class PrimeColors extends ThemeExtension<PrimeColors> {
+  /// Cria uma paleta resolvida com todas as cores explicitamente informadas.
   const PrimeColors({
     required this.accent,
     required this.accentLight,
@@ -74,21 +115,46 @@ class PrimeColors extends ThemeExtension<PrimeColors> {
     required this.divider,
   });
 
+  /// Cor de marca (accent) principal.
   final Color accent;
+
+  /// Variante clara da marca (derivada por luminância).
   final Color accentLight;
+
+  /// Variante escura da marca (derivada por luminância).
   final Color accentDark;
+
+  /// Cor de conteúdo sobre a marca (texto/ícones em cima do accent).
   final Color onAccent;
+
+  /// Fundo da tela.
   final Color background;
+
+  /// Superfície primária — cartões e painéis.
   final Color surface;
+
+  /// Superfície alternativa — fundos sutis e inputs.
   final Color surfaceAlt;
+
+  /// Cor-base das sombras.
   final Color shadowDark;
+
+  /// Texto primário — alto contraste.
   final Color textPrimary;
+
+  /// Texto secundário — contraste médio.
   final Color textSecondary;
+
+  /// Texto atenuado — baixo contraste / placeholders.
   final Color textMuted;
+
+  /// Cor de divisores e bordas finas.
   final Color divider;
 
   /// Borda fina (1px @ alpha ~0.10) derivada do neutro escuro.
   Color get border => shadowDark.withValues(alpha: 0.10);
+
+  /// Borda mais marcada (alpha ~0.18) derivada do neutro escuro.
   Color get borderStrong => shadowDark.withValues(alpha: 0.18);
 
   /// Paleta clara derivada de um [brand] (seed). `accentLight`/`accentDark`
@@ -134,6 +200,7 @@ class PrimeColors extends ThemeExtension<PrimeColors> {
     divider: PrimePalette.dividerDark,
   );
 
+  /// Retorna uma cópia da paleta substituindo apenas os campos informados.
   @override
   PrimeColors copyWith({
     Color? accent,
@@ -163,6 +230,7 @@ class PrimeColors extends ThemeExtension<PrimeColors> {
     divider: divider ?? this.divider,
   );
 
+  /// Interpola linearmente entre esta paleta e [other] pelo fator [t].
   @override
   PrimeColors lerp(ThemeExtension<PrimeColors>? other, double t) {
     if (other is! PrimeColors) return this;
@@ -186,6 +254,7 @@ class PrimeColors extends ThemeExtension<PrimeColors> {
 /// Acesso à paleta resolvida do tema atual via `BuildContext`.
 /// Uso: `context.cs.accent`, `context.cs.textPrimary`.
 extension PrimeContextColors on BuildContext {
+  /// Paleta resolvida do tema atual; cai para a marca padrão se ausente.
   PrimeColors get cs =>
       Theme.of(this).extension<PrimeColors>() ??
       PrimeColors.light(PrimePalette.defaultBrand);

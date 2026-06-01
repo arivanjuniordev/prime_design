@@ -10,6 +10,7 @@ import '../theme/prime_tokens.dart';
 /// Para versões interativas (tap/scale), envolva com [PrimePressable] ou use
 /// [PrimeCard].
 class PrimeSurface extends StatelessWidget {
+  /// Cria um container base flat com borda e sombra opcionais.
   const PrimeSurface({
     super.key,
     required this.child,
@@ -22,13 +23,22 @@ class PrimeSurface extends StatelessWidget {
     this.showBorder = true,
   });
 
+  /// Conteúdo da superfície.
   final Widget child;
+
+  /// Espaçamento interno opcional.
   final EdgeInsetsGeometry? padding;
+
+  /// Raio de arredondamento das bordas.
   final double borderRadius;
 
   /// Fundo. Default: surface do tema.
   final Color? color;
+
+  /// Nível de elevação (sombra) da superfície.
   final PrimeElevation elevation;
+
+  /// Formato da superfície (retângulo ou círculo).
   final BoxShape shape;
 
   /// Override da cor da borda. Default: borda neutra do tema.

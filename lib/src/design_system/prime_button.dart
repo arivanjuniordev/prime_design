@@ -4,11 +4,22 @@ import '../theme/prime_colors.dart';
 import '../theme/prime_tokens.dart';
 import '../ui/prime_haptics.dart';
 
-enum PrimeButtonVariant { primary, secondary, danger }
+/// Variantes visuais do [PrimeButton].
+enum PrimeButtonVariant {
+  /// Botão de ação principal (fundo de destaque).
+  primary,
+
+  /// Botão secundário (fundo de superfície com borda).
+  secondary,
+
+  /// Botão de ação destrutiva (fundo de erro).
+  danger,
+}
 
 /// Botão flat universal (estilo guitarra) com API label-based (estilo Sharon).
 /// Touch target mínimo 48, scale-down ao pressionar, suporte a loading/icon.
 class PrimeButton extends StatefulWidget {
+  /// Cria um botão flat com rótulo, variante e estados de loading/ícone.
   const PrimeButton({
     super.key,
     required this.label,
@@ -19,11 +30,22 @@ class PrimeButton extends StatefulWidget {
     this.fullWidth = false,
   });
 
+  /// Texto exibido no botão.
   final String label;
+
+  /// Callback de toque; quando nulo o botão fica desabilitado.
   final VoidCallback? onPressed;
+
+  /// Variante visual do botão.
   final PrimeButtonVariant variant;
+
+  /// Se true, exibe um indicador de progresso e desabilita o toque.
   final bool loading;
+
+  /// Ícone opcional exibido antes do rótulo.
   final IconData? icon;
+
+  /// Se true, o botão ocupa toda a largura disponível.
   final bool fullWidth;
 
   @override

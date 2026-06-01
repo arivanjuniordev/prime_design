@@ -6,9 +6,13 @@ import 'prime_badge.dart';
 /// Mapeia status textuais comuns da frota pra cores semânticas e renderiza
 /// um PrimeBadge. Centraliza a paleta de status pra toda a app.
 class PrimeStatusChip extends StatelessWidget {
+  /// Cria um chip para o [status] textual informado.
   const PrimeStatusChip(this.status, {super.key});
+
+  /// Status textual da entidade (ex.: `ativo`, `vencido`, `em_andamento`).
   final String status;
 
+  /// Cor semântica correspondente ao [status] (sucesso, alerta, erro ou info).
   static Color colorFor(String status) {
     switch (status.toLowerCase()) {
       case 'ativo':
@@ -34,6 +38,7 @@ class PrimeStatusChip extends StatelessWidget {
     }
   }
 
+  /// Rótulo legível do [status], trocando `_` por espaço.
   static String labelFor(String status) => status.replaceAll('_', ' ');
 
   @override
