@@ -5,9 +5,9 @@ import '../theme/prime_tokens.dart';
 import 'prime_search_field.dart';
 
 /// Opção de um seletor de entidade: par de [id] e [label].
-class PickerOption {
+class PrimePickerOption {
   /// Cria uma opção com o [id] (valor) e o [label] (texto exibido).
-  const PickerOption(this.id, this.label);
+  const PrimePickerOption(this.id, this.label);
 
   /// Identificador da opção (valor retornado na seleção).
   final String id;
@@ -21,9 +21,9 @@ class PickerOption {
 /// Abre um bottom sheet pesquisável: campo de busca no topo que filtra os
 /// itens em tempo real pelo label (case-insensitive). A API pública é
 /// mantida idêntica ao antigo dropdown.
-class EntityPickerField extends StatelessWidget {
+class PrimeEntityPickerField extends StatelessWidget {
   /// Cria um seletor de entidade por id, com bottom sheet pesquisável.
-  const EntityPickerField({
+  const PrimeEntityPickerField({
     super.key,
     required this.label,
     required this.value,
@@ -39,7 +39,7 @@ class EntityPickerField extends StatelessWidget {
   final String? value;
 
   /// Opções disponíveis para seleção.
-  final List<PickerOption> options;
+  final List<PrimePickerOption> options;
 
   /// Callback disparado quando o usuário escolhe uma opção.
   final ValueChanged<String?> onChanged;
@@ -132,7 +132,7 @@ class _EntityPickerSheet extends StatefulWidget {
 
   final String title;
   final String? value;
-  final List<PickerOption> options;
+  final List<PrimePickerOption> options;
   final String? emptyLabel;
 
   @override
